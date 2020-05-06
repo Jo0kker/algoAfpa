@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="fbadeb55-c1d3-4e94-8dc4-b49bc0228443" name="NoBloom">
+        <fileTransfer rootFolder="/home/debian/server" accessType="SFTP" host="45.146.255.12" port="22" sshConfigId="23b7b9ff-2a39-490f-a3eb-f9b50fc9846b" sshConfig="debian@45.146.255.12:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

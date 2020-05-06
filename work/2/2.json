@@ -1,0 +1,7 @@
+{
+  "consigne": "Ecrire un programme qui demande un nombre à l’utilisateur, puis qui calcule et affiche le carré de ce nombre.",
+  "pseudoCode": "Variables val, double num&eacute;riques<br />\nD&eacute;but<br />\nVal &larr; 231<br />\ncarre &larr; Val * Val<br />\nEcrire Val<br />\nEcrire Double<br />\nFin",
+  "js": "function carre(Val)<br />\n{<br />\nreturn Val * Val;<br />\n}",
+  "scriptConsigne": "Renseigner un nombre",
+  "scriptJs": "carre"
+}

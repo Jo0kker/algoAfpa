@@ -1,0 +1,7 @@
+{
+  "consigne": "Ecrire un algorithme qui demande deux nombres &agrave; l&rsquo;utilisateur et l&rsquo;informe ensuite si le produit est n&eacute;gatif ou positif (on inclut cette fois le traitement du cas o&ugrave; le produit peut &ecirc;tre nul). Attention toutefois, on ne doit pas calculer le produit !",
+  "pseudoCode": "Variables n1, n2 en Entier<br />\nEcrire &quot;Renseigner deux nombres&quot;<br />\nLire n1, n2<br />\nSi(n1 > 0 ET n2 > 0) OU (n1 < 0 ET n2 < 0) Alors<br />\n<t>Ecrire &quot;Leur produit est positif&quot;<br />\nSinonSi n1 = 0 OU n2 = 0<br />\n<t>Ecrire &quot;Le produit est null&quot;<br />\nSinon<br />\n<t>Ecrire &quot;Leur produit est n&eacute;gatif&quot;<br />\nFinsi",
+  "js":"function produitPolarNull(n1,n2) {<br />\n <t>if ((n1 < 0 &amp;&amp; n2 < 0) || (n1 > 0 &amp;&amp; n2 > 0)) {<br />\n <tt>return &quot;Le produit est positif&quot;;<br />\n<t> } else if (n1 == 0 || n2 == 0) {<br />\n <tt> return &quot;Le produit est null&quot;;<br />\n<t> } else {<br />\n <tt> return &quot;Le produit est n&eacute;gatif&quot;;<br />\n <t>}<br />\n}",
+  "scriptConsigne": "Renseignez 2 nombres séparer d'un ;",
+  "scriptJs": "produitPolarNull"
+}

@@ -1,0 +1,4 @@
+{
+  "consigne": "Une variante du précédent : on dispose de trois variables A, B et C. Ecrivez un algorithme transférant à B la valeur de A, à C la valeur de B et à A la valeur de C (toujours quels que soient les contenus préalables de ces variables).",
+  "pseudoCode": "Variables A, B, C, D en Entier<br />\nD&eacute;but<br />\nD &larr; A<br />\nA &larr; B<br />\nB &larr; C<br />\nC &larr; D<br />\nFin"
+}

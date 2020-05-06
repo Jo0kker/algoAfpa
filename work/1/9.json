@@ -1,0 +1,6 @@
+{
+  "consigne": "Que produit l’algorithme suivant ?",
+  "pseudoCode": "Variables A, B, C en Caract&egrave;res D&eacute;but<br />\nA &larr; &quot;573&quot;<br />\nB &larr; &quot;19&quot;<br />\nC &larr; A + B<br />\nFin",
+  "js": "var C = &quot;57319&quot;",
+  "php":"$C = 592;"
+}

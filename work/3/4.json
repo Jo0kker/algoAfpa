@@ -1,0 +1,7 @@
+{
+  "consigne": "Ecrire un algorithme qui demande un nombre &agrave; l&rsquo;utilisateur, et l&rsquo;informe ensuite si ce nombre est positif ou n&eacute;gatif (on inclut cette fois le traitement du cas o&ugrave; le nombre vaut z&eacute;ro).",
+  "pseudoCode": "Variable n en entier<br />\nEcrire &quot;Renseignez un nombre&quot;<br />\nLire n<br />\nSi n > 0<br />\n<t>Ecrire &quot;Le nombre est positif&quot;<br />\nSinonSi n = 0<br />\n<t>Ecrire &quot;Le nombre est null&quot;<br />\nSinon<br />\n<t>Ecrire &quot;Ce nombre est n&eacute;gatif&quot;<br />\nFinSi",
+  "js": "function posNegNull(num) {<br />\n <t>num = parseInt(num);<br />\n <t>if (num > 0) {<br />\n <tt>$('#resolve').html(&quot;Le nombre est positif&quot;);<br />\n <t>} else if (num = 0) {<br />\n <tt>$('#resolve').html(&quot;Le nombre est null&quot;);<br />\n <t>} else {<br />\n <tt>$('#resolve').html(&quot;Le nombre est n&eacute;gatif&quot;);<br />\n <t>}<br />\n}<br />\n",
+  "scriptConsigne": "Renseignez <em class='text-info'>1 nombre</em> puis tapez entrée",
+  "scriptJs": "posNegNull"
+}

@@ -1,0 +1,5 @@
+{
+  "consigne": "Quel résultat produit le programme suivant ?",
+  "pseudoCode": "Variables val, double num&eacute;riques<br />\nD&eacute;but<br />\nVal &larr; 231<br />\nDouble &larr; Val * 2<br />\nEcrire Val<br />\nEcrire Double<br />\nFin",
+  "js": "var Val = 231;<br />\nvar Double = 462;"
+}

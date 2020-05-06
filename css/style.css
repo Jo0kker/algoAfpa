@@ -1,0 +1,38 @@
+.dropright:hover .dropdown-menu{
+    display: block;
+    position: absolute;
+    transform: translate3d(300px, 0px, 0px);
+    top: 0px;
+    left: 0px;
+    will-change: transform;
+}
+.container {
+    border: 1px solid white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 5px rgba(158,158,158,1);
+}
+.dropdown-item:hover {
+    background-color: #005cbf;
+    color: white;
+}
+* {
+    font-family: "American Typewriter", sans-serif;
+}
+.page-link {
+    font-size: 44px;
+}
+.consigne {
+    background-color: #062c33;
+    border-radius: 5px;
+    border: 2px solid black;
+    padding: 10px;
+}
+.tab-pane {
+    font-size: 14px;
+}
+t{
+    margin-left: 15px;
+}
+tt{
+    margin-left: 30px;
+}

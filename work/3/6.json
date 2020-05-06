@@ -1,0 +1,7 @@
+{
+  "consigne": "Ecrire un algorithme qui demande l&rsquo;&acirc;ge d&rsquo;un enfant &agrave; l&rsquo;utilisateur. Ensuite, il l&rsquo;informe de sa cat&eacute;gorie : <br />\n&bull;&quot;Poussin&quot; de 6 &agrave; 7 ans<br />\n&bull;&quot;Pupille&quot; de 8 &agrave; 9 ans<br />\n&bull;&quot;Minime&quot; de 10 &agrave; 11 ans<br />\n&bull;&quot;Cadet&quot; apr&egrave;s 12 ans<br />\nPeut-on concevoir plusieurs algorithmes &eacute;quivalents menant &agrave; ce r&eacute;sultat ?",
+  "pseudoCode": "Variable age en entier<br />\nEcrire &quot;Renseignez l'age de l'enfant&quot;<br />\nLire age<br />\nSi age >= 12<br />\n<t>Ecrire &quot;Cadet&quot;<br />\nSinonSi age >= 10<br />\n<t>Ecrire &quot;Minime&quot;<br />\nSinonSi age >= 8<br />\n<t>Ecrire &quot;Pupille&quot;<br />\nSinonSi age >= 6<br />\n<t>Ecrire &quot;Poussin&quot;<br />\nSinon<br />\n<t>Ecrire &quot;Sans cat&eacute;gorie&quot;<br />\nFinSi",
+  "js": "function ageCategorie(age) {<br />\n <t> age = parseInt(age);<br />\n<t> if (age >= 12) {<br />\n<tt> return &quot;Cadet&quot;;<br />\n <t>}else if (age >= 10) {<br />\n<tt> return &quot;Minime&quot;;<br />\n <t>}else if (age >= 8) {<br />\n <tt>return &quot;Pupille&quot;;<br />\n<t> }else if (age >= 6) {<br />\n <tt> return &quot;Poussin&quot;;<br />\n<t> }else {<br />\n <tt> return &quot;Sans cat&eacute;gorie&quot;;<br />\n<t> }<br />\n}<br />\n",
+  "scriptConsigne": "Renseignez un age pour savoir sa catégorie",
+  "scriptJs": "ageCategorie"
+}

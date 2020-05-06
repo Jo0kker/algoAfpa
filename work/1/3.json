@@ -1,0 +1,5 @@
+{
+  "consigne": "Quelles seront les valeurs des variables A et B après exécution des instructions suivantes ?",
+  "pseudoCode": "Variables A, B en Entier<br />\nD&eacute;but<br />\nA &larr; 49<br />\nB&larr;A+4<br />\nA&larr;A+1<br />\nB&larr;A&ndash;4<br />\nFin",
+  "js" : "var A = 50;<br />\nvar B = 46;"
+}

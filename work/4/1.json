@@ -1,0 +1,4 @@
+{
+  "consigne": "Formulez un algorithme &eacute;quivalent &agrave; l&rsquo;algorithme suivant :<br />\n<br />\n<t>Si Tutu > Toto + 4 OU Tata = &quot;OK&quot; Alors<br />\n<tt>Tutu &larr; Tutu + 1<br />\n<t>Sinon<br />\n<tt>Tutu &larr; Tutu &ndash; 1<br />\n<t>Finsi",
+  "pseudoCode": "Si Tutu <= Toto + 4 ET Tata <> &quot;OK&quot; Alors<br />\n<t>Tutu &larr; Tutu - 1<br />\nSinon<br />\n <t> Tutu &larr; Tutu + 1<br />\nFinsi"
+}

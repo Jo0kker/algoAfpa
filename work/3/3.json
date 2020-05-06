@@ -1,0 +1,7 @@
+{
+  "consigne": "Ecrire un algorithme qui demande trois noms &agrave; l&rsquo;utilisateur et l&rsquo;informe ensuite s&rsquo;ils sont rang&eacute;s ou non dans l&rsquo;ordre alphab&eacute;tique.",
+  "pseudoCode": "Variables a, b, c en String<br />\nEcrire &quot;Renseignez trois noms&quot;<br />\nLire a, b, c<br />\nSi a < b ET b < c<br />\n<t>Ecrire &quot;Ces noms sont rang&eacute;s alphab&eacute;tiquement&quot;<br />\nSinon<br />\n<t>Ecrire &quot;Ces noms ne sont pas rang&eacute;e&quot;<br />\nFinsi",
+  "js": "function namesAlph(a,b,c) {<br />\n <t>if (a < b &amp;&amp; b < c) {<br />\n <tt>return &quot;Ces noms sont rang&eacute;s alphab&eacute;tiquement&quot;;<br />\n <t>} else {<br />\n <tt>return &quot;Ces noms ne sont pas rang&eacute;s&quot;<br />\n <t>}<br />\n}<br />\n",
+  "scriptConsigne": "Renseigner <em class='text-info'>troi noms</em> séparer d'un ;",
+  "scriptJs": "namesAlph"
+}
