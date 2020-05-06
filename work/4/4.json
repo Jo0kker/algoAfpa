@@ -1,0 +1,7 @@
+{
+  "consigne": "Un magasin de reprographie facture 0,10 E les dix premières photocopies, 0,09 E les vingt suivantes et 0,08 E au- delà. Ecrivez un algorithme qui demande à l’utilisateur le nombre de photocopies effectuées et qui affiche la facture correspondante.",
+  "pseudoCode": "Variables page, prix en nombre<br />\nEcrire &quot;Nombre de page(s)&quot;<br />\nLire page<br />\nSi page <= 10<br />\n<t> prix = page * 0,1<br />\nSinonSi page <= 30<br />\n<t> prix = 10 * 0,1 + (page &ndash; 10) * 0,09<br />\nSinon<br />\n <t> prix = 10 * 0,1 + 20 * 0,09 + (page &ndash; 30) * 0,08<br />\nFinSi<br />\nEcrire 'Le prix total est de' prix",
+  "js": "function pageCount(page) {<br />\n<t> page = parseInt(page);<br />\n<t> var prix = 0;<br />\n<t> if (page <= 10) {<br />\n<tt> prix = page * 0.1;<br />\n<t> }else if (page <= 30) {<br />\n<tt> prix = 10 * 0.1 + (page - 10) * 0.09;<br />\n<t> }else {<br />\n<tt> prix = 10 * 0.1 + 20 * 0.9 + (page - 30) * 0.08;<br />\n<t> }<br />\n<t> return &quot;Le prix total est de ' prix ' euro&quot;<br />\n}<br />\n",
+  "scriptConsigne": "Ecrire le nomre de pages",
+  "scriptJs": "pageCount"
+}

@@ -39,13 +39,13 @@ ksort($navContent);
 <div class="bg-white">
 </div>
 <div class="container-fluid mt-3 bg-dark text-white ">
-    <header class="border-bottom border-light">
+    <header class="">
         <div class="row m-3">
-            <a class="col-lg-12 page-link bg-transparent border-0 h3 text-center font-weight-bold text-white" href="index.php">Algorithmes</a>
+            <a class="head-title col-lg-12 page-link bg-transparent border-0 h3 text-center font-weight-bold text-white" href="index.php">Algorithmes</a>
         </div>
     </header>
-    <div class="row mt-5 mb-3">
-        <aside class="col-3 border-right border-info">
+    <div class="row mt-3 mb-3">
+        <aside class="col-2">
             <h3 class="h3 text-center mb-3">Liste des exercices</h3>
             <?php foreach ($navContent as $sais => $exos) { ?>
             <ul class="nav flex-column mb-2">
@@ -64,7 +64,7 @@ ksort($navContent);
             </ul>
             <?php } ?>
         </aside>
-        <section class="col-9 pr-5">
+        <section class="col-10">
             <?php if (empty($_GET)): ?>
             <h3 class="h3 text-center justify-content-center mt-5">Merci de selectionner un exercice.</h3>
             <?php else: ?>
@@ -73,13 +73,13 @@ ksort($navContent);
                     $exo = json_decode($fileContent, true);
                 ?>
             <div class="row">
-                <div class="col-lg-6">
+                <div class="col-lg-6 first">
                     <h4 class="">Consigne : </h4>
-                    <p class="col-12 font-weight-light consigne ml-3"><?= $exo['consigne'] ?></p>
+                    <p class="col-12 font-weight-light consigne ml-2"><?= $exo['consigne'] ?></p>
                     <h4 class="">Pseudo-Code : </h4>
-                    <p class="col-12 font-weight-light consigne ml-3"><?php echo ($exo['pseudoCode']) ?></p>
+                    <p class="col-12 font-weight-light consigne ml-2"><?php echo ($exo['pseudoCode']) ?></p>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-6 second">
                     <?php if (isset($exo['js'])) : ?>
                         <h4>CODE :</h4>
                         <ul class="nav nav-tabs mb-2 ml-3" id="myTab" role="tablist">
@@ -87,7 +87,7 @@ ksort($navContent);
                                 <li class="nav-item">
                                     <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">JavaScript</a>
                                 </li>
-                            <?php endif; if (isset($exo['jquery'])): ?>
+                            <?php endif; if (!isset($exo['jquery'])): ?>
                                 <li class="nav-item">
                                     <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Jquery</a>
                                 </li>
@@ -102,7 +102,7 @@ ksort($navContent);
                             <?php endif; ?>
                         </ul>
                         <div class="tab-content mb-2 ml-5" id="myTabContent">
-                            <div class="tab-pane fade show active font-weight-light" id="home" role="tabpanel" aria-labelledby="home-tab"><?= $exo['js'] ?></div>
+                            <div class="tab-pane fade show active font-weight-light consigne" id="home" role="tabpanel" aria-labelledby="home-tab"><?= $exo['js'] ?></div>
                             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab"><?= $exo['jquery'] ?></div>
                             <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab"><?= $exo['php'] ?></div>
                             <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab"><?= $exo['result'] ?></div>
@@ -112,11 +112,11 @@ ksort($navContent);
                         <h4 class="">Execution script</h4>
                         <div class="row text-center mt-3 ml-3">
                             <?php if (isset($exo['scriptJs'])) : ?>
-                                <button class="col-4 text-white bg-transparent border-0 btn btn-secondary" type="button" onclick="creatForm('JavaScript', '<?= $exo['scriptJs'] ?>')">JavaScript</button>
+                                <button class="col-4 text-white border-0 btn btn-secondary" type="button" onclick="creatForm('JavaScript', '<?= $exo['scriptJs'] ?>')">JavaScript</button>
                             <?php endif; if (isset($exo['scriptJquery'])) : ?>
-                                <button class="col-4 text-white bg-transparent border-0" type="button" class="btn btn-secondary">Jquery</button>
+                                <button class="col-4 text-white border-0 btn btn-secondary ml-2" type="button">Jquery</button>
                             <?php endif; if (isset($exo['scriptPhp'])) : ?>
-                                <button class="col-4 text-white bg-transparent border-0" type="button" class="btn btn-secondary">Php</button>
+                                <button class="col-4 text-white border-0 btn btn-secondary ml-2" type="button">Php</button>
                             <?php endif; ?>
                         </div>
                     <?php endif; ?>

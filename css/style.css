@@ -1,7 +1,10 @@
+* {
+    font-family: "American Typewriter", sans-serif;
+}
 .dropright:hover .dropdown-menu{
     display: block;
     position: absolute;
-    transform: translate3d(300px, 0px, 0px);
+    transform: translate3d(260px, 0px, 0px);
     top: 0px;
     left: 0px;
     will-change: transform;
@@ -15,14 +18,25 @@
     background-color: #005cbf;
     color: white;
 }
-* {
-    font-family: "American Typewriter", sans-serif;
+.head-title {
+    font-family: "Apple Chancery";
+}
+header {
+    border-bottom: 3px double floralwhite;
+}
+aside {
+    border-right: 6px dotted whitesmoke;
 }
 .page-link {
     font-size: 44px;
 }
+.first {
+    border-right: 3px dashed gray;
+}
 .consigne {
-    background-color: #062c33;
+    color: black;
+    background-color: antiquewhite;
+    font-weight: bold!important;
     border-radius: 5px;
     border: 2px solid black;
     padding: 10px;
@@ -31,8 +45,28 @@
     font-size: 14px;
 }
 t{
+    font-size: 18px;
+    font-family: "Apple Braille";
     margin-left: 15px;
 }
 tt{
+    font-family: "Apple Braille";
+    font-size: 18px;
     margin-left: 30px;
+}
+p {
+
+    font-size: 18px;
+    font-family: "Apple Braille";
+}
+.tab-pane {
+    font-size: 18px;
+    font-family: "Apple Braille";
+}
+.nav-link {
+    color: whitesmoke;
+}
+.nav-link:hover {
+    color: papayawhip;
+    background-color: darkblue;
 }
