@@ -1,0 +1,13 @@
+{
+  "consigne": "Les habitants de Toon&rsquo;sCity paient l&rsquo;imp&ocirc;t selon les r&egrave;gles suivantes :<br />\n<t>&#61623; les hommes de plus de 20 ans paient l&rsquo;imp&ocirc;t<br />\n<t>&#61623; les femmes paient l&rsquo;imp&ocirc;t si elles ont entre 18 et 35 ans<br />\n<t>&#61623; les autres ne paient pas d&rsquo;imp&ocirc;t<br />\nLe programme demandera donc l&rsquo;&acirc;ge et le sexe du Toon, et se prononcera donc ensuite sur le fait que l&rsquo;habitant est imposable ou non.",
+  "pseudoCode": "Ecrire <g>&quot;Entrez le sexe : &quot;</g><br />\nLire <b>sex</b><br />\nEcrire <g>&quot;Entrez l&rsquo;age: &quot;</g><br />\nLire <b>age</b><br />\n<br />\nSi <b>(sex = &quot;M&quot; ET age > 20) OU (sex = &quot;F&quot; ET age > 18 ET age < 35)</b> Alors<br />\n<t> Ecrire <g>&quot;Imposable&quot;</g><br />\nSinon<br />\n<t> Ecrire <g>&quot;Non Imposable&quot;</g><br />\nFinSi",
+  "js": "function impot(arg) {<br />\n<t> var <b>input</b> = <b>arg</b>.split(<b>regexp1</b>);</t><br />\n<t> var <b>sexe</b> = <b>input[0]</b>;</t><br />\n<t> var <b>age</b> = parseInt(<b>input[1]</b>);</t><br />\n<t> if ((<b>sexe</b> == <g>'M'</g> && <b>age</b > <g>20</g>) || (<b>sexe</b> = <g>'F'</g> && <b>age</b> > <g>18</g> && <b>age</b> <g>35</g>)) {</t><br />\n<t> document.getElementById('result').innerHTML(<g>'Impossable'</g>)</t><br />\n<t> } else {</t><br />\n<tt> document.getElementById('result').innerHTML(<g>'Non impossable'</g>)</tt><br />\n<t> }</t><br />\n}",
+  "jquery": "function impot(arg) {<br />\n<t> var <b>input</b> = <b>arg</b>.split(<b>regexp1</b>);</t><br />\n<t> var <b>sexe</b> = <b>input[0]</b>;</t><br />\n<t> var <b>age</b> = parseInt(<b>input[1]</b>);</t><br />\n<t> if ((<b>sexe</b> == <g>'M'</g> && <b>age</b > <g>20</g>) || (<b>sexe</b> == <g>'F'</g> && <b>age</b> > <g>18</g> && <b>age</b> < <g>35</g>)) {</t><br />\n<t> $('#resolve').html(<g>'Impossable'</g>)</t><br />\n<t> } else {</t><br />\n<tt> $('#resolve').html(<g>'Non impossable'</g>)</t><br />\n<t> }</t><br />\n}",
+  "scriptConsigne": "Ecrire le sexe (M ou F) puis l'age",
+  "scriptJs": "impot",
+  "scriptJquery": "impot",
+  "inputTitle": {
+    "sexe": "Sexe (M ou F)",
+    "age": "L'age"
+  }
+}

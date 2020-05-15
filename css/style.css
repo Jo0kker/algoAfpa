@@ -33,6 +33,7 @@ aside {
 .first {
     border-right: 3px dashed gray;
 }
+
 .consigne {
     color: black;
     background-color: antiquewhite;
@@ -69,4 +70,16 @@ p {
 .nav-link:hover {
     color: papayawhip;
     background-color: darkblue;
+}
+g{
+    color: green;
+    font-weight: normal;
+}
+b{
+    color: blue;
+    font-weight: normal;
+}
+r{
+    color: red;
+    font-weight: normal;
 }

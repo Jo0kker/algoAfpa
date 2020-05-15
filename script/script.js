@@ -1,4 +1,4 @@
-const regexp1 = new RegExp("[ ,;:]+", "g")
+const regexp1 = new RegExp("[ ,;:&]+", "g")
 function carre(num) {
     num = parseInt(num);
     if (Number.isInteger(num)) {
@@ -119,10 +119,9 @@ function addMin(arg) {
     $('#resolve').html("<h5 class='mt-2'>Dans une minite il sera "+h+":"+m+"</h5>")
 }
 function addSec(arg) {
-    var input = arg.split(regexp1);
-    var h = parseInt(input[0]);
-    var m = parseInt(input[1]);
-    var s = parseInt(input[2]);
+    var h = parseInt(arg[0].value);
+    var m = parseInt(arg[1].value);
+    var s = parseInt(arg[2].value);
     s++;
     if (s == 60) {
         s = 0;
@@ -138,7 +137,7 @@ function addSec(arg) {
     $('#resolve').html("<h5 class='mt-2'>Dans une seconde il sera "+h+":"+m+":"+s+"</h5>")
 }
 function pageCount(page) {
-    page = parseInt(page);
+    page = parseInt(page[0].value);
     var prix = 0;
     if (page <= 10) {
         prix = page * 0.1;
@@ -148,4 +147,29 @@ function pageCount(page) {
         prix = 10 * 0.1 + 20 * 0.9 + (page - 30) * 0.08;
     }
     $('#resolve').html("<h5 class='mt-2'>Le prix total est de "+prix+" euro</h5>")
+}
+function impot(arg) {
+    var sexe = arg[0].value;
+    var age = parseInt(arg[1].value);
+    if ((sexe == "M" && age > 20) || (sexe == "F" && age > 18 && age < 35)) {
+        $('#resolve').html("<h5 class='mt-2'>Impossable</h5>")
+    } else {
+        $('#resolve').html("<h5 class='mt-2'>Non impossable</h5>")
+    }
+}
+function election(arg) {
+    var C1 = parseInt(arg[0].value);
+    var C2 = parseInt(arg[1].value);
+    var C3 = parseInt(arg[2].value);
+    var C4 = parseInt(arg[3].value);
+    $('#resolve').removeAttr('hidden');
+    if (C1 >50) {
+        $('#resolve').html("<h5 class='mt-2'>Elu au premier tour</h5>");
+    } else if (C2 > 50 || C3 > 50 || C4 > 50) {
+        $('#resolve').html("<h5 class='mt-2'>Plus dans la course</h5>");
+    } else if (C1 > C2 && C1 > C3 && C1 > C4) {
+        $('#resolve').html("<h5 class='mt-2'>Ballotage favorable</h5>");
+    } else {
+        $('#resolve').html("<h5 class='mt-2'>Ballotage défavorable</h5>");
+    }
 }

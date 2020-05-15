@@ -3,5 +3,10 @@
   "pseudoCode": "Variables h, m, s en nombre<br />\nEcrire 'Entrez les heures, minutes, et les secondes'<br />\nLire h, m, s<br />\ns = s + 1<br />\nSi s = 60<br />\n<t> s = 0<br />\n<t> m = m + 1<br />\nFinSi<br />\nSi m = 60<br />\n<t> m = 0<br />\n<t> h = h + 1<br />\nFinSi<br />\nSi h = 24<br />\n<t> h = 0<br />\nFinSi<br />\nEcrire 'Dans une seconde il sera h:m:s'",
   "js": "function addSec(h, m, s) {<br />\n<t> s++;<br />\n<t> if (s == 60) {<br />\n<tt> s = 0;<br />\n<tt> m++;<br />\n<t> }<br />\n<t> if (m == 60) {<br />\n<tt> m = 0;<br />\n<tt> h++;<br />\n<t> }<br />\n<t> if (h == 24) {<br />\n<tt> h = 0;<br />\n<t> }<br />\n<t> return 'Dans une seconde il sera h:m:s'<br />\n}<br />\n",
   "scriptConsigne": "Entrez les heures, minutes, et les secondes",
-  "scriptJs": "addSec"
+  "scriptJs": "addSec",
+  "inputTitle": {
+    "heur": "Les heures",
+    "min": "Les minutes",
+    "sec": "Les secondes"
+  }
 }

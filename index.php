@@ -72,6 +72,7 @@ ksort($navContent);
                     $fileContent = file_get_contents('work/' . $_GET['s'] . DIRECTORY_SEPARATOR . $_GET['e'] . '.json');
                     $exo = json_decode($fileContent, true);
                 ?>
+            <div class=""><h3 class="h3 text-center justify-content-center mb-2">Saison <?= $_GET['s'].' : Exercice ' . $_GET['e'] ?> </h3></div>
             <div class="row">
                 <div class="col-lg-6 first">
                     <h4 class="">Consigne : </h4>
@@ -82,49 +83,35 @@ ksort($navContent);
                 <div class="col-lg-6 second">
                     <?php if (isset($exo['js'])) : ?>
                         <h4>CODE :</h4>
-                        <ul class="nav nav-tabs mb-2 ml-3" id="myTab" role="tablist">
+                        <nav class="nav nav-tabs mb-2 ml-3">
                             <?php if (isset($exo['js'])): ?>
-                                <li class="nav-item">
-                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">JavaScript</a>
-                                </li>
-                            <?php endif; if (!isset($exo['jquery'])): ?>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Jquery</a>
-                                </li>
+                                <a class="nav-item nav-link active" href="#js" data-toggle="tab">JavaScript</a>
+                            <?php endif; if (isset($exo['jquery'])): ?>
+                                <a class="nav-item nav-link" href="#jquery" data-toggle="tab">Jquery</a>
                             <?php endif; if (isset($exo['php'])): ?>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Php</a>
-                                </li>
-                            <?php endif; if (isset($exo['result'])): ?>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Réponse</a>
-                                </li>
+                                <a class="nav-item nav-link" href="#php" data-toggle="tab">Php</a>
                             <?php endif; ?>
-                        </ul>
-                        <div class="tab-content mb-2 ml-5" id="myTabContent">
-                            <div class="tab-pane fade show active font-weight-light consigne" id="home" role="tabpanel" aria-labelledby="home-tab"><?= $exo['js'] ?></div>
-                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab"><?= $exo['jquery'] ?></div>
-                            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab"><?= $exo['php'] ?></div>
-                            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab"><?= $exo['result'] ?></div>
+                        </nav>
+                        <div class="tab-content mb-2 ml-5">
+                            <div class="tab-pane fade show active font-weight-light consigne" id="js"><?= $exo['js'] ?></div>
+                            <div class="tab-pane fade font-weight-light consigne" id="jquery"><?= $exo['jquery'] ?></div>
+                            <div class="tab-pane fade font-weight-light consigne" id="php"><?= $exo['php'] ?></div>
                         </div>
                     <?php endif; ?>
                     <?php if (isset($exo['scriptJs'])) : ?>
                         <h4 class="">Execution script</h4>
                         <div class="row text-center mt-3 ml-3">
-                            <?php if (isset($exo['scriptJs'])) : ?>
-                                <button class="col-4 text-white border-0 btn btn-secondary" type="button" onclick="creatForm('JavaScript', '<?= $exo['scriptJs'] ?>')">JavaScript</button>
-                            <?php endif; if (isset($exo['scriptJquery'])) : ?>
-                                <button class="col-4 text-white border-0 btn btn-secondary ml-2" type="button">Jquery</button>
+                                <button class="col-4 text-white border-0 btn btn-secondary" id="javascriptForm" type="button">JavaScript</button>
+                            <?php if (isset($exo['scriptJquery'])) : ?>
+                                <button class="col-4 text-white border-0 btn btn-secondary ml-2" type="button" onclick="creatForm('Jquery', '<?= $exo['scriptJquery'] ?>')">Jquery</button>
                             <?php endif; if (isset($exo['scriptPhp'])) : ?>
-                                <button class="col-4 text-white border-0 btn btn-secondary ml-2" type="button">Php</button>
+                                <button class="col-4 text-white border-0 btn btn-secondary ml-2" type="button" onclick="creatForm('Php', '<?= $exo['scriptPhp'] ?>')">Php</button>
                             <?php endif; ?>
                         </div>
                     <?php endif; ?>
-                    <div class="ml-5 mt-3 consigne" hidden id="result"></div>
+                    <form class="ml-5 mt-3 consigne" hidden id="result"></form>
                 </div>
             </div>
-
-
             <?php endif; ?>
         </section>
     </div>
@@ -135,12 +122,32 @@ ksort($navContent);
 <script src="js/bootstrap.min.js"></script>
 <script src="script/script.js"></script>
 <script>
+    $("#javascriptForm").click(function () {
+        var consigne = "<?= $exo['scriptConsigne'] ?>";
+        var inputTitle = <?= json_encode($exo['inputTitle']) ?>;
+        result = $("#result");
+        result.removeAttr('hidden');
+        result.append(consigne)
+        $.each(inputTitle ,function (index, val) {
+            result.append("<p>"+val+"</p><input name='"+index+"'>");
+        })
+        result.append('</br><input class="btn-primary btn test" type="submit" value="Run !">');
+        result.append('<div id="resolve"></div>')
+    })
+    $('#result').submit(function( event ) {
+        event.preventDefault();
+        var input = $(this).serializeArray();
+        <?= $exo['scriptJs'] ?>(input);
+    });
+
+
+
     function creatForm(lang, scriptName) {
         result = $("#result");
         result.removeAttr('hidden');
-        result.html("                    <h5>Script JS Renseignez la(les) valeurs d'entrée</h5>\n" +
+        result.html("                    <h5>Script "+lang+" Renseignez la(les) valeurs d'entrée</h5>\n" +
             "                    <p><?= $exo['scriptConsigne'] ?></p>\n" +
-            "                        <input class=\"input-group col-6 bg-transparent border-dark rounded mr-3 pl-2 text-white\" placeholder='Après avoir rempli appuyer sur entrée' id=\"inputForm\" onchange='"+scriptName+"(this.value)' type=\"text\">\n" +
+            "                        <input class=\"input-group col-6 bg-transparent border-dark rounded mr-3 pl-2 text-black\" placeholder='Après avoir rempli appuyer sur entrée' id=\"inputForm\" onchange='"+scriptName+"(this.value)' type=\"text\">\n" +
             "                    <div class='col-6' id='resolve'></div>\n");
     }
 
