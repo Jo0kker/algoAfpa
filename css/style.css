@@ -77,14 +77,14 @@ p {
     background-color: darkblue;
 }
 g{
-    color: green;
+    color: green!important;
     font-weight: normal;
 }
 b{
-    color: blue;
+    color: blue!important;
     font-weight: normal;
 }
 r{
-    color: red;
+    color: red!important;
     font-weight: normal;
 }
