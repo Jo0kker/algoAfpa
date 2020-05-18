@@ -1,0 +1,12 @@
+{
+  "consigne": "Ecrire un algorithme qui choisit un nombre au hasard compris entre 1 et 100. Pour ceci, on utilise la fonction :<br />\n<t>iNombreHasard <- random[1..100]</t><br />\n<br />\nDemander à l'utilisateur de trouver le nombre. On fera apparaître un message : « Plus petit ! », et inversement, « Plus grand ! » jusqu’à ce que l'utilisateur ait trouvé et afficher en combien de coups.",
+  "pseudoCode": "<b>randomN</b> = random[1..100]<br />\nEcrire <g>'Trouver le bon nombre entre 1 et 100'</g><br />\n<b>N</b> = <r>0</r><br />\nTantQue <b>N</b> != <b>randomN</b><br />\n<t>Lire <b>N</b><br />\n<t>Si <b>N</b> < <b>randomN</b></t><br />\n<tt>Ecrire <g>'Plus grand'</g></tt><br />\n<t>Sinon</t><br />\n<tt>Ecrire <g>'Plus petit'</g></tt><br />\n<t>FinSi</t><br />\nFinTantQue<br />\nEcrire <g>'Bravo tu a trouve le nombre'</g> + <b>randomN</b>",
+  "jquery": "var <b>randomN</b> = Math.floor(Math.random() * 100) + 1;<br />\nfunction randomN(arg) {<br />\n<t> var <b>N</b> = <b>arg[0]</b>.value;</t><br />\n<t> if (<b>N</b> < <b>randomN</b>) {</t><br />\n<tt> $('#resolve').html(<g>'Plus grand'</g>)</tt><br />\n<t> }else if (<b>N</b> > <b>randomN</b>) {</t><br />\n<tt> $('#resolve').html(<g>'Plus petit'</g>)</tt><br />\n<t> }else {</t><br />\n<tt> $('#resolve').html(<g>'Bravo tu a trouve le bon nombre : '</g> + randomN)</tt><br />\n<t> }</t><br />\n}<br />\n",
+  "js": "var <b>randomN</b> = Math.floor(Math.random() * 100) + 1;<br />\nfunction randomN(arg) {<br />\n<t> var <b>N</b> = <b>arg[0]</b>.value;</t><br />\n<t> if (<b>N</b> < <b>randomN</b>) {</t><br />\n<tt> document.getElementById('resolve').innerHTML(<g>'Plus grand'</g>)</tt><br />\n<t> }else if (<b>N</b> > <b>randomN</b>) {</t><br />\n<tt> document.getElementById('revolve').innerHTML(<g>'Plus petit'</g>)</tt><br />\n<t> }else {</t><br />\n<tt> document.getElementById('resolve').innerHTML(<g>'Bravo tu a trouve le bon nombre : '</g> + randomN)</tt><br />\n<t> }</t><br />\n}<br />\n",
+  "scriptJs": "randomN",
+  "scriptJquery": "randomN",
+  "inputTitle": {
+    "num": "Votre nombre"
+  },
+  "scriptConsigne": "Trouver le bon nombre entre 1 et 100"
+}

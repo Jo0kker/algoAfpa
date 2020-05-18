@@ -1,6 +1,5 @@
-const regexp1 = new RegExp("[ ,;:&]+", "g")
 function carre(num) {
-    num = parseInt(num);
+    num = parseInt(num[0].value);
     if (Number.isInteger(num)) {
         $('#resolve').html("<h5 class='mt-2'>Réponse : </h5> " + num * num + " ");
     } else {
@@ -8,13 +7,13 @@ function carre(num) {
     }
 }
 function tva(arg) {
-    var input = arg.split(regexp1);
-    if (input.length !== 3) {
+    console.log(arg.length)
+    if (arg.length !== 3) {
         $('#resolve').html("<h5 class='mt-2'>Problème dans le nombre d'argument</h5>")
     }else {
-        var price = parseInt(input[0]);
-        var numArticle = parseInt(input[1]);
-        var tva = parseInt(input[2]);
+        var price = parseInt(arg[0].value);
+        var numArticle = parseInt(arg[1].value);
+        var tva = parseInt(arg[2].value);
         if (Number.isInteger(price) && Number.isInteger(numArticle) && Number.isInteger(tva)) {
             var total = price * numArticle;
             var result = total / 100 * tva;
@@ -36,7 +35,7 @@ function belle() {
     return phrase1 + " | " + phrase2 + " | " + phrase3 + " | " + phrase4;
 }
 function posNeg(num) {
-    num = parseInt(num);
+    num = parseInt(num[0].value);
     if (num > 0) {
         $('#resolve').html("<h5 class='mt-2'>Le nombre est positif</h5>");
     } else {
@@ -44,9 +43,8 @@ function posNeg(num) {
     }
 }
 function produitPolar(arg) {
-    var input = arg.split(regexp1)
-    var n1 = input[0];
-    var n2 = input[1];
+    var n1 = arg[0].value;
+    var n2 = arg[1].value;
     if ((n1 < 0 && n2 < 0) || (n1 > 0 && n2 > 0)) {
         $('#resolve').html("<h5 class='mt-2'>Leur produit est positif</h5>");
     } else {
@@ -54,10 +52,9 @@ function produitPolar(arg) {
     }
 }
 function namesAlph(arg) {
-    var input = arg.split(regexp1);
-    var a = input[0];
-    var b = input[1];
-    var c = input[2];
+    var a = arg[0].value;
+    var b = arg[1].value;
+    var c = arg[2].value;
     if (a < b && b < c) {
         $("#resolve").html("<h5 class='mt-2'>Ces noms sont rangés alphabétiquement</h5>")
     } else {
@@ -65,7 +62,7 @@ function namesAlph(arg) {
     }
 }
 function posNegNull(num) {
-    num = parseInt(num);
+    num = parseInt(num[0].value);
     if (!Number.isInteger(num)) {
         $('#resolve').html("<h5 class='mt-2'>L'entrée n'est pas numerique</h5>")
     }else {
@@ -79,9 +76,8 @@ function posNegNull(num) {
     }
 }
 function produitPolarNull(arg) {
-    var input = arg.split(regexp1);
-    var n1 = input[0];
-    var n2 = input[1];
+    var n1 = arg[0].value;
+    var n2 = arg[1].value;
     if ((n1 < 0 && n2 < 0) || (n1 > 0 && n2 > 0)) {
         $('#resolve').html("<h5 class='mt-2'>Le produit est positif</h5>");
     } else if (n1 == 0 || n2 == 0) {
@@ -91,7 +87,7 @@ function produitPolarNull(arg) {
     }
 }
 function ageCategorie(age) {
-    age = parseInt(age);
+    age = parseInt(age[0].value);
     if (age >= 12) {
         $('#resolve').html("<h5 class='mt-2'>Cadet</h5>")
     }else if (age >= 10) {
@@ -105,9 +101,8 @@ function ageCategorie(age) {
     }
 }
 function addMin(arg) {
-    var input = arg.split(regexp1);
-    var h = parseInt(input[0]);
-    var m = parseInt(input[1]);
+    var h = parseInt(arg[0].value);
+    var m = parseInt(arg[1].value);
     m++;
     if (m == 60) {
         m = 0;
@@ -172,4 +167,94 @@ function election(arg) {
     } else {
         $('#resolve').html("<h5 class='mt-2'>Ballotage défavorable</h5>");
     }
+}
+function assurance(arg) {
+    var age = parseInt(arg[0].value);
+    var Tperm = parseInt(arg[1].value);
+    var accident = parseInt(arg[2].value);
+    var fidelite = parseInt(arg[3].value);
+    var point = 0;
+    var tarif;
+
+    if (age < 25){
+        point++;
+    }
+    if (Tperm < 2) {
+        point++;
+    }
+    point = point + accident;
+    if (point < 3 && fidelite > 5) {
+        point = point - 1;
+    }
+    switch (point) {
+        case -1:
+            tarif = 'bleu';
+            break
+        case 0:
+            tarif = 'vert';
+            break
+        case 1:
+            tarif = 'orange';
+            break
+        case 2:
+            tarif = 'rouge';
+            break
+        default:
+            tarif = 'refuse';
+    }
+
+    $('#resolve').html("<h5 class='mt-2'>Couleur tarif : </h5>" + tarif);
+
+}
+function boucle(arg) {
+    $('#consigne').text('Entrer un nombre entre 1 et 3');
+    n = arg[0].value;
+    for (n = 0; (n < 1 || n > 3);) {
+        n = prompt("Mauvais choix, try again")
+    }
+    $('#resolve').html("<h5 class='mt-2'>Good number</h5>");
+}
+function smallBig(arg) {
+    var N = arg[0].value;
+    if (N < 10) {
+        $('#resolve').html("<h5 class='mt-2'>Plus grand</h5>");
+    }else if (N > 20) {
+        $('#resolve').html("<h5 class='mt-2'>Plus petit</h5>");
+    }else {
+        $('#resolve').html("<h5 class='mt-2'>Good number</h5>");
+    }
+}
+var randomNum = Math.floor(Math.random() * 100) + 1;
+function randomN(arg) {
+    var N = arg[0].value;
+    if (N < randomNum) {
+        $('#resolve').html("<h5 class='mt-2'>Plus grand</h5>")
+    }else if (N > randomNum) {
+        $('#resolve').html("<h5 class='mt-2'>Plus petit</h5>")
+    }else {
+        $('#resolve').html("<h5 class='mt-2'>Bravo tu a trouve le bon nombre : </h5>" + randomNum)
+    }
+}
+function tenNumber(arg) {
+    var num = parseInt(arg[0].value);
+    $('#resolve').html('Les 10 nombres suivant sont : </br>')
+    for (n = num + 1; n <= (num + 10); n++) {
+        $('#resolve').append(" "+n+" </br>");
+    }
+}
+function tableMulti(arg) {
+    var N = parseInt(arg[0].value);
+    var M;
+    $('#resolve').html('La table de multiplication de '+N+' est : </br>')
+    for (M = 1; M <= 10; M++) {
+        $('#resolve').append(N +" x " + M + " = " + M*N + " </br>");
+    }
+}
+function sommeNum(arg) {
+    var N = parseInt(arg[0].value);
+    var S = 0;
+    for (i = 0;i <= N; i++) {
+        S = S + i
+    }
+    $('#resolve').html('La somme est : ' + S);
 }

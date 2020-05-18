@@ -1,0 +1,12 @@
+{
+  "consigne": "Ecrire un algorithme qui demande un nombre de départ, et qui calcule la somme des entiers jusqu’à ce nombre.",
+  "pseudoCode": "Ecrire <g>'Entrez un nombre : '</g><br />\nLire <b>N</b><br />\n<b>S</b> = <r>0</r><br />\nPour <b>i</b> = <r>1</r>; <b>i</b> < <b>N</b>; <b>i</b>++<br />\n <t><b>S</b> = <b>S</b> + <b>i</b></t><br />\nFinPour<br />\nEcrire <g>'La somme est : '</g> <b>S</b>",
+  "jquery": "function sommeNum(arg) {<br />\n<t> var <b>N</b> = parseInt(<b>arg[0]</b>.value);</t><br />\n<t> var <b>S</b> = <r>0</r>;</t><br />\n<t> for (<b>i</b> = <r>0</r>;<b>i</b> < <b>N</b>; <b>i</b>++) {</t><br />\n<tt> S = S + i</tt><br />\n<t> }</t><br />\n<t> $('#resolve').html('La somme est : ' + S);</t><br />\n}<br />\n",
+  "js": "function sommeNum(arg) {<br />\n<t> var <b>N</b> = parseInt(<b>arg[0]</b>.value);</t><br />\n<t> var <b>S</b> = <r>0</r>;</t><br />\n<t> for (<b>i</b> = <r>0</r>;<b>i</b> < <b>N</b>; <b>i</b>++) {</t><br />\n<tt> S = S + i</tt><br />\n<t> }</t><br />\n<t> document.getElementById('resolve').innerHTML('La somme est : ' + S);</t><br />\n}<br />\n",
+  "scriptJs": "sommeNum",
+  "scriptJquery": "sommeNum",
+  "scriptConsigne": "Entrez un nombre.",
+  "inputTitle": {
+    "num": "Votre nombre"
+  }
+}

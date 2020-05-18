@@ -3,5 +3,9 @@
   "pseudoCode": "Variables h, m en Nombre<br />\nEcrire 'Entrez les heures, puis les minutes'<br />\nLire h, m<br />\nm = m + 1<br />\nSi m = 60<br />\n<t> m = 0<br />\n<t> h = h + 1<br />\nFinSi<br />\nSi h = 24<br />\n<t> h = 0<br />\nFinSi<br />\nEcrire 'Dans une minute il sera h:m'",
   "js": "function addMin(h, m) {<br />\n<t> m++;<br />\n <t> if (m == 60) {<br />\n<tt> m = 0;<br />\n<tt> h++;<br />\n<t> }<br />\n<t> if (h == 24) {<br />\n<tt> h = 0;<br />\n<t> }<br />\n<t> return &quot;Dans une minite il sera &quot;+h+&quot;:&quot;+m+&quot;.&quot;;<br />\n}<br />\n",
   "scriptConsigne": "Entrez les heures, puis les minutes",
-  "scriptJs": "addMin"
+  "scriptJs": "addMin",
+  "inputTitle": {
+    "heure": "Rentrer les heures",
+    "min": "Rentrer les minutes"
+  }
 }

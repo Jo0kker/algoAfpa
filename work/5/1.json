@@ -1,0 +1,11 @@
+{
+  "consigne": "Ecrire un algorithme qui demande à l’utilisateur un nombre compris entre 1 et 3 jusqu’à ce que la réponse convienne.",
+  "pseudoCode": "Ecrire <g>'Entrez un nombre entre 1 et 3'</g><br />\n<b>n</b> = <r>0</r><br />\nTantQue <b>n</b> < <r>1</r> OU <b>n</b> > <r>3</r><br />\n<t> Lire <b>n</b></t><br />\n<t> Si <b>n</b> < <r>1</r> OU <b>n</b> > <r>3</r><t><br />\n<tt> Ecrire <g>'Mauvais choix, try again !'</g></tt><br />\n<t> FinSi</t><br />\n FinTantQue",
+  "inputTitle": {
+    "number": "Entrée un nombre entre 1 et 3"
+  },
+  "js":"function boucle(arg) {<br />\n<t> <b>n</b> = <b>arg[0]</b>.value;</t><br />\n<t> for (<b>n</b> = <r>0</r>; (<b>n</b> < <r>1</r> || <b>n</b> > <r>3</r>);) {</t><br />\n<tt> <b>n</b> = prompt(<g>'Mauvais choix, try again'</g>)</tt><br />\n<t> }</t><br />\n<t> document.getElementById('resolve').innerHTML(<g>'Good number'</g>);</t><br />\n}<br />\n",
+  "jquery": "function boucle(arg) {<br />\n<t> <b>n</b> = <b>arg[0]</b>.value;</t><br />\n<t> for (<b>n</b> = <r>0</r>; (<b>n</b> < <r>1</r> || <b>n</b> > <r>3</r>);) {</t><br />\n<tt> <b>n</b> = prompt(<g>'Mauvais choix, try again'</g>)</tt><br />\n<t> }</t><br />\n<t> $('#resolve').html(<g>'Good number'</g>);</t><br />\n}<br />\n",
+  "scriptJs": "boucle",
+  "scriptJquery": "boucle"
+}

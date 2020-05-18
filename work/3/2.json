@@ -2,6 +2,10 @@
   "consigne": "Ecrire un algorithme qui demande deux nombres a&#768; l&rsquo;utilisateur et l&rsquo;informe ensuite si leur produit est ne&#769;gatif ou positif (on laisse de co&#770;te&#769; le cas ou&#768; le produit est nul). Attention toutefois : on ne doit pas calculer le produit des deux nombres.",
   "pseudoCode": "Variables n1, n2 en Entier<br />\nEcrire &quot;Renseigner deux nombres&quot;<br />\nLire n1, n2<br />\nSi(n1 > 0 ET n2 > 0) OU (n1 < 0 ET n2 < 0) Alors<br />\n<t>Ecrire &quot;Leur produit est positif&quot;<br />\nSinon<br />\n<t>Ecrire &quot;Leur produit est n&eacute;gatif&quot;<br />\nFinsi",
   "js": "function produitPolar(n1, n2) {<br />\n<t>if ((n1 < 0 &amp;&amp; n2 < 0) || (n1 > 0 &amp;&amp; n2 > 0)) {<br />\n<tt>return &quot;Leur produit est positif&quot;;<br />\n<t>} else {<br />\n<tt>return &quot;Leur produit est n&eacute;gatif&quot;;<br />\n<t>}<br />\n}",
-  "scriptConsigne": "Renseigner <em class='text-info' >deux nombres</em> séparer par une <em class='text-danger'>-> ; <-</em>, puis appuyer sur entrée",
-  "scriptJs": "produitPolar"
+  "scriptConsigne": "Renseigner <em class='text-info' >deux nombres</em>",
+  "scriptJs": "produitPolar",
+  "inputTitle": {
+    "num1": "Premier nombre",
+    "num2": "Deuxieme nombre"
+  }
 }

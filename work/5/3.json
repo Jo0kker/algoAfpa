@@ -1,0 +1,12 @@
+{
+  "consigne": "Ecrire un algorithme qui demande un nombre de départ, et qui ensuite affiche les dix nombres suivants. Par exemple, si l'utilisateur entre le nombre 17, le programme affichera les nombres de 18 à 27.",
+  "pseudoCode": "Ecrire <g>'Entrez un nombre de départ'</g><br />\nLire <b>nStart</b><br />\n<b>nEnd</b> = <b>nStart</b> + <r>10</r><br />\nEcrire <g>'Les nombres suivant sont : '</g><br />\nTantQue <b>nStart</b> != <b>nEnd</b><br />\n<t><b>nStart</b> = <b>nStart</b> + <r>1</r></t><br />\n<t>Ecrire <b>nStart</b></t><br />\nFinTantQue<br />\nEcrire <b>nEnd</b>\n",
+  "scriptJs": "tenNumber",
+  "scriptJquery": "tenNumber",
+  "inputTitle": {
+    "num": "Votre nombre"
+  },
+  "scriptConsigne": "Entrez un nombre de départ",
+  "jquery": "function tenNumber(arg) {<br />\n<t> var <b>num</b> = parseInt(<b>arg[0]</b>.value);</t><br />\n<t> $('#resolve').html(<g>'Les 10 nombres suivant sont : '</g>)</t><br />\n<t> for (<b>n</b> = <b>num</b> + <r>1</r>; <b>n</b> <= (<b>num</b> + <r>10</r>); <b>n</b>++) {</t><br />\n<tt> $('#resolve').append(<g>' '</g>+<b>n</b>+<g>' '</g>);</tt><br />\n<t> }<t><br />\n}<br />\n",
+  "js": "function tenNumber(arg) {<br />\n<t>var <b>resolve</b> = document.getElementById('resolve');</t><br />\n<t> var <b>num</b> = parseInt(<b>arg[0]</b>.value);</t><br />\n<t> <b>resolve</b>.innerHTML(<g>'Les 10 nombres suivant sont : '</g>)</t><br />\n<t> for (<b>n</b> = <b>num</b> + <r>1</r>; <b>n</b> <= (<b>num</b> + <r>10</r>); <b>n</b>++) {</t><br />\n<tt> <b>resolve</b>.textContent += <g>' '</g>+<b>n</b>+<g>' '</g>;</tt><br />\n<t> }<t><br />\n}<br />\n"
+}

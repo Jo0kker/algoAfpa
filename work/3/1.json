@@ -3,5 +3,8 @@
   "pseudoCode": "Variable num number<br />\nLire num<br />\nSi num > 0 <br />\necrire &quot;le nombre est positif&quot;<br />\nou<br />\necrire &quot;le nombre est n&eacute;gatif&quot;",
   "js": "function posNeg(num) {<br />\n<t> num = parseInt(num);<br />\n <t>if (num > 0) {<br />\n <tt>return &quot;Le nombre est positif&quot;;<br />\n <t>} else {<br />\n <tt>return &quot;Le nombre est n&eacute;gatif&quot;;<br />\n <t>}<br />\n}<br />\n",
   "scriptConsigne": "Renseigner un <em class='text-info'>nombre</em> pour savoir si il est positif ou négatif",
-  "scriptJs": "posNeg"
+  "scriptJs": "posNeg",
+  "inputTitle": {
+    "num": "Votre nombre"
+  }
 }

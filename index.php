@@ -103,13 +103,14 @@ ksort($navContent);
                         <div class="row text-center mt-3 ml-3">
                                 <button class="col-4 text-white border-0 btn btn-secondary" id="javascriptForm" type="button">JavaScript</button>
                             <?php if (isset($exo['scriptJquery'])) : ?>
-                                <button class="col-4 text-white border-0 btn btn-secondary ml-2" type="button" onclick="creatForm('Jquery', '<?= $exo['scriptJquery'] ?>')">Jquery</button>
+                                <button class="col-4 text-white border-0 btn btn-secondary ml-2" type="button" id="jqueryForm">Jquery</button>
                             <?php endif; if (isset($exo['scriptPhp'])) : ?>
                                 <button class="col-4 text-white border-0 btn btn-secondary ml-2" type="button" onclick="creatForm('Php', '<?= $exo['scriptPhp'] ?>')">Php</button>
                             <?php endif; ?>
                         </div>
                     <?php endif; ?>
-                    <form class="ml-5 mt-3 consigne" hidden id="result"></form>
+                    <form class="ml-5 mt-3 consigne" hidden></form>
+                    <div id="myPrompt"></div>
                 </div>
             </div>
             <?php endif; ?>
@@ -125,20 +126,41 @@ ksort($navContent);
     $("#javascriptForm").click(function () {
         var consigne = "<?= $exo['scriptConsigne'] ?>";
         var inputTitle = <?= json_encode($exo['inputTitle']) ?>;
-        result = $("#result");
+        $("form").attr('id', 'resultJs');
+        result = $("#resultJs");
         result.removeAttr('hidden');
-        result.append(consigne)
-        $.each(inputTitle ,function (index, val) {
+        result.append("<h5 id='consigne'>"+consigne+"</h5>")
+        $.each(inputTitle,function (index, val) {
             result.append("<p>"+val+"</p><input name='"+index+"'>");
         })
-        result.append('</br><input class="btn-primary btn test" type="submit" value="Run !">');
+        result.append('</br><input class="btn-primary btn mt-3"  type="submit" value="Run !">');
         result.append('<div id="resolve"></div>')
+
+        $('#resultJs').submit(function( event ) {
+            event.preventDefault();
+            var input = $(this).serializeArray();
+            <?= $exo['scriptJs'] ?>(input);
+        });
     })
-    $('#result').submit(function( event ) {
-        event.preventDefault();
-        var input = $(this).serializeArray();
-        <?= $exo['scriptJs'] ?>(input);
-    });
+    $("#jqueryForm").click(function () {
+        var consigne = "<?= $exo['scriptConsigne'] ?>";
+        var inputTitle = <?= json_encode($exo['inputTitle']) ?>;
+        $("form").attr('id', 'resultJs');
+        result = $("#resultJs");
+        result.removeAttr('hidden');
+        result.append("<h5 id='consigne'>"+consigne+"</h5>")
+        $.each(inputTitle,function (index, val) {
+            result.append("<p>"+val+"</p><input name='"+index+"'>");
+        })
+        result.append('</br><input class="btn-primary btn mt-3"  type="submit" value="Run !">');
+        result.append('<div id="resolve"></div>')
+
+        $('#resultJs').submit(function( event ) {
+            event.preventDefault();
+            var input = $(this).serializeArray();
+            <?= $exo['scriptJs'] ?>(input);
+        });
+    })
 
 
 

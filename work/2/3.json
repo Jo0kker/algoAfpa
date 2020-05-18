@@ -2,6 +2,11 @@
   "consigne": "Ecrire un programme qui lit le prix HT d’un article, le nombre d’articles et le taux de TVA, et qui fournit le prix total TTC correspondant. Faire en sorte que des libellés apparaissent clairement.",
   "pseudoCode": "Variables price, numArticle, TVA num&eacute;rique<br />\ntotal = price * numArticle<br />\nresult = total / 100 * TVA<br />\nreturn result",
   "js": "function tva(price, numArticle, taux) {<br />\n<t>total = price * numArticle;</t><br /><t>result = total / 100 * taux;</t><br />\n<t>return result;</t><br />\n}<br />\n",
-  "scriptConsigne": "Renseigner <em class='text-info'>le prix</em> ; <em class='text-info'>le nombre d'article</em> ; <em class='text-info'>la tva</em> (les nombres doivent etre séparer par un ;)",
-  "scriptJs": "tva"
+  "scriptConsigne": "Renseigner <em class='text-info'>le prix</em> ; <em class='text-info'>le nombre d'article</em> ; <em class='text-info'>la tva</em>",
+  "scriptJs": "tva",
+  "inputTitle": {
+    "price": "Le prix par unitée",
+    "numArticle": "Le nombre d'article",
+    "tva": "La TVA"
+  }
 }

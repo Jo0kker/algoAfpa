@@ -1,0 +1,12 @@
+{
+  "consigne": "Ecrire un algorithme qui demande un nombre compris entre 10 et 20, jusqu’à ce que la réponse convienne. En cas de réponse supérieure à 20, on fera apparaître un message : « Plus petit ! », et inversement, « Plus grand ! » si le nombre est inférieur à 10.<br />\n",
+  "pseudoCode":"Ecrire <g>'Entrez un nombre entre 10 et 20'</g><br />\n<b>N</b> = <r>0</r><br />\nTantQue <b>N</b> < <r>10</r> OU <b>N</b> > <r>20</r><br />\n<t>Lire <b>N</b></t><br />\n<t>Si <b>N</b> < <r>10</r></t><br />\n<tt>Ecrire <g>'Plus grand !'</g></tt><br />\n<t>SinonSi <b>N</b> > <r>20</r></t><br />\n<tt>Ecrire <g>'Plus petit !'</g></tt><br />\n<t>FinSi</t><br />\nFinTantQue<br />\n",
+  "jquery" : "function smallBig(arg) {<br />\n<t> var <b>N</b> = <b>arg[0]</b>.value;</t><br />\n<t> if (<b>N</b> < <r>10</r>) {</t><br />\n<tt> $('#resolve').html(<g>'Plus grand'</g>);</tt><br />\n<t> }else if (<b>N</b> > <r>20</r>) {</t><br />\n<tt> $('#resolve').html(<g>'Plus petit'</g>);</tt><br />\n<t> }else {</t><br />\n<tt> $('#resolve').html(<g>'Good number'</g>);</tt><br />\n<t> }</t><br />\n}<br />\n",
+  "js": "function smallBig(arg) {<br />\n<t> var <b>N</b> = <b>arg[0]</b>.value;</t><br />\n<t> if (<b>N</b> < <r>10</r>) {</t><br />\n<tt> document.getElementById('resolve').innerHTML(<g>'Plus grand'</g>);</tt><br />\n<t> }else if (<b>N</b> > <r>20</r>) {</t><br />\n<tt> document.getElementById('resolve').innerHTML(<g>'Plus petit'</g>);</tt><br />\n<t> }else {</t><br />\n<tt> document.getElementById('resolve').innerHTML(<g>'Good number'</g>);</tt><br />\n<t> }</t><br />\n}<br />\n",
+  "scriptJs": "smallBig",
+  "scriptJquery": "smallBig",
+  "scriptConsigne": "Entrez un nombre entre 10 et 20",
+  "inputTitle": {
+    "num": "Votre nombre"
+  }
+}

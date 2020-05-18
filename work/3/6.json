@@ -3,5 +3,8 @@
   "pseudoCode": "Variable age en entier<br />\nEcrire &quot;Renseignez l'age de l'enfant&quot;<br />\nLire age<br />\nSi age >= 12<br />\n<t>Ecrire &quot;Cadet&quot;<br />\nSinonSi age >= 10<br />\n<t>Ecrire &quot;Minime&quot;<br />\nSinonSi age >= 8<br />\n<t>Ecrire &quot;Pupille&quot;<br />\nSinonSi age >= 6<br />\n<t>Ecrire &quot;Poussin&quot;<br />\nSinon<br />\n<t>Ecrire &quot;Sans cat&eacute;gorie&quot;<br />\nFinSi",
   "js": "function ageCategorie(age) {<br />\n <t> age = parseInt(age);<br />\n<t> if (age >= 12) {<br />\n<tt> return &quot;Cadet&quot;;<br />\n <t>}else if (age >= 10) {<br />\n<tt> return &quot;Minime&quot;;<br />\n <t>}else if (age >= 8) {<br />\n <tt>return &quot;Pupille&quot;;<br />\n<t> }else if (age >= 6) {<br />\n <tt> return &quot;Poussin&quot;;<br />\n<t> }else {<br />\n <tt> return &quot;Sans cat&eacute;gorie&quot;;<br />\n<t> }<br />\n}<br />\n",
   "scriptConsigne": "Renseignez un age pour savoir sa catégorie",
-  "scriptJs": "ageCategorie"
+  "scriptJs": "ageCategorie",
+  "inputTitle": {
+    "age": "Votre age"
+  }
 }
