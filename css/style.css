@@ -88,3 +88,6 @@ r{
     color: red!important;
     font-weight: normal;
 }
+.btnExec {
+    box-shadow: inset 0px 0px 10px 4px rgba(29, 29, 29, 0.75);
+}

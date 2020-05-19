@@ -1,0 +1,14 @@
+{
+  "consigne": "Ecrire un algorithme qui demande un nombre de départ, et qui calcule sa factorielle.",
+  "pseudoCode": "Ecrire <g>'Entrez un nombre : '</g><br />\nLire <b>N</b><br />\n<b>F</b> = <r>0</r><br />\nPour <b>i</b> = <r>2</r>; <b>i</b> <= <b>N</b>; <b>i</b>++<br />\n <t><b>F</b> = <b>F</b> * <b>i</b></t><br />\nFinPour<br />\nEcrire <g>'La factorielle est : '</g> <b>S</b>",
+  "jquery": "function factorNum(arg) {<br />\n<t> var <b>N</b> = parseInt(<b>arg[0]</b>.value);</t><br />\n<t> var <b>F</b>= <r>0</r>;</t><br />\n<t> for (<b>i</b> = <r>2</r>;<b>i</b> <= <b>N</b>; <b>i</b>++) {</t><br />\n<tt> <b>F</b> = <b>F</b> * <b>i</b>;</tt><br />\n<t> }</t><br />\n<t> $('#resolve').html(<g>'La factorielle est : '</g> + F);</t><br />\n}<br />\n",
+  "js": "function factorNum(arg) {<br />\n<t> var <b>N</b> = parseInt(<b>arg[0]</b>.value);</t><br />\n<t> var <b>F</b>= <r>0</r>;</t><br />\n<t> for (<b>i</b> = <r>2</r>;<b>i</b> <= <b>N</b>; <b>i</b>++) {</t><br />\n<tt> <b>F</b> = <b>F</b> * <b>i</b>;</tt><br />\n<t> }</t><br />\n<t> document.getElementById('resolve').innerHTML = <g>'La factorielle est : '</g> + F;</t><br />\n}<br />\n",
+  "php": "<b>$N</b> = <r>(int)</r><b>$_POST</b>['num'];<br />\n<b>$F</b> = <r>1</r>;<br />\nfor (<b>$i</b> = <r>2</r>;<b>$i</b> <= <b>$N</b>; <b>$i</b>++) {<br />\n<t> <b>$F</b> *= <b>$i</b>;</t><br />\n}<br />\n",
+  "scriptJs": "factorNum",
+  "scriptJquery": "factorNum",
+  "inputTitle": {
+    "num": "Votre chiffre"
+  },
+  "scriptConsigne": "Entrez un nombre pour avoir son factorielle",
+  "scriptPhp": "5/7.php"
+}

@@ -258,3 +258,80 @@ function sommeNum(arg) {
     }
     $('#resolve').html('La somme est : ' + S);
 }
+function factorNum(arg) {
+    var N = parseInt(arg[0].value);
+    var F= 1;
+    for (i = 1;i <= N; i++) {
+        F = F * i;
+    }
+    $('#resolve').html('La factorielle est : ' + F);
+}
+var multiNumber_max = 0;
+var multiNumber_iteration = 1;
+var multiNumber_maxIteration = 0;
+function multiNumber(arg) {
+    var num = arg[0].value;
+    if (num > multiNumber_max) {
+        multiNumber_max = num;
+        multiNumber_maxIteration = multiNumber_iteration;
+    }
+    multiNumber_iteration++;
+    $('#resolve').html('Le max est '+multiNumber_max+' a l\'iteration n°'+multiNumber_maxIteration);
+    $('#consigne').html('Entrez le ' + multiNumber_iteration + ' nombre');
+}
+var prix = 0;
+var somme = 0;
+var paye = 0;
+var reste = 0;
+function sommePrice(arg) {
+    var i10 = 0;
+    var i5 = 0;
+    prix = parseInt(arg[0].value);
+    if (prix > 0) {
+        $('#consigne').html('Entrez le prix de l\'article');
+        somme = somme + prix;
+    }
+    $('#resolve').html("Vous devez :" + somme + " € </br>");
+    if (arg[1].value > 0) {
+        paye += parseInt(arg[1].value);
+    }
+    console.log(paye)
+    reste = somme - paye;
+    console.log(reste);
+    while (reste >= 10) {
+        i10++;
+        reste -= 10;
+    }
+    if (reste >= 5) {
+        i5++;
+        reste -= 5;
+    }
+    $('input[name=prix]').val("");
+    $('input[name=paye]').val("");
+    $('#resolve').append("Rendu de la monnaie :</br>");
+    $('#resolve').append("Billets de 10 E : " + i10);
+    $('#resolve').append("</br>Billets de  5 E : " + i5);
+    $('#resolve').append("</br>Pièces de 1 E : " + reste);
+}
+function arrayZero() {
+    var A = [];
+    for (let i = 0; i < 6; i++) {
+        A[i] = 0;
+    }
+    document.getElementById('resolve').innerHTML = A;
+}
+function arrayVoil() {
+    var fruits = ['a','e','i','o','u','y'];
+}
+let notes = [];
+let i = 0
+function noteTake(arg) {
+    let note = parseInt(arg[0].value);
+    if (i < 8) {
+        notes.push(note);
+        document.getElementById('resolve').innerHTML = "Ajoutez la note " + (i+1);
+        i++;
+    }else {
+        document.getElementById('resolve').innerHTML = "Les notes sont "+notes;
+    }
+}

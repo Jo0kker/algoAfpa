@@ -1,0 +1,15 @@
+{
+  "consigne": "Lire la suite des prix (en euros entiers et terminée par zéro) des achats d’un client. Calculer la somme qu’il doit, lire la somme qu’il paye, et simuler la remise de la monnaie en affichant les textes \"10 Euros\", \"5 Euros\" et \"1 Euro\" autant de fois qu’il y a de coupures de chaque sorte à rendre.",
+  "pseudoCode": "prix = 0\nsomme = 0\nTantQue prix <> 0\n    Ecrire \"Entrez le prix de l'article : \"\n    Lire prix\n    somme = somme + prix\nFinTantQue\nEcrire \"Vous devez :\" + somme + \" €\"\nEcrire \"Montant réglé :\"\nLire paye\nReste = paye - somme\ni10 = 0\nTantQue Reste >= 10\n    i10 = i10 + 1\n    Reste = Reste – 10\nFinTantQue\ni5 = 0\nSi Reste >= 5\n    i5 = 1\n    Reste = Reste – 5\nFinSi\nEcrire \"Rendu de la monnaie :\"\nEcrire \"Billets de 10 E : \", i10\nEcrire \"Billets de  5 E : \", i5\nEcrire \"Pièces de 1 E : \", reste\n",
+  "inputTitle": {
+    "prix": "Prix de l'article",
+    "paye": "Somme paye"
+  },
+  "jquery": "var prix = 0;\nvar somme = 0;\nvar paye = 0;\nvar reste = 0;\nfunction sommePrice(arg) {\n    var i10 = 0;\n    var i5 = 0;\n    prix = parseInt(arg[0].value);\n    if (prix > 0) {\n        $('#consigne').html('Entrez le prix de l\\'article');\n        somme = somme + prix;\n    }\n    $('#resolve').html(\"Vous devez :\" + somme + \" € </br>\");\n    if (arg[1].value > 0) {\n        paye += parseInt(arg[1].value);\n    }\n    console.log(paye)\n    reste = somme - paye;\n    console.log(reste);\n    while (reste >= 10) {\n        i10++;\n        reste -= 10;\n    }\n    if (reste >= 5) {\n        i5++;\n        reste -= 5;\n    }\n    $('input[name=prix]').val(\"\");\n    $('input[name=paye]').val(\"\");\n    $('#resolve').append(\"Rendu de la monnaie :</br>\");\n    $('#resolve').append(\"Billets de 10 E : \" + i10);\n    $('#resolve').append(\"</br>Billets de  5 E : \" + i5);\n    $('#resolve').append(\"</br>Pièces de 1 E : \" + reste);\n}\n",
+  "js": "var prix = 0;\nvar somme = 0;\nvar paye = 0;\nvar reste = 0;\nfunction sommePrice(arg) {\n    var i10 = 0;\n    var i5 = 0;\n    prix = parseInt(arg[0].value);\n    if (prix > 0) {\n        document.getElementById('consigne')innerHTML = 'Entrez le prix de l\\'article';\n        somme += prix;\n    }\n    if (arg[1].value > 0) {\n        paye += parseInt(arg[1].value);\n    }\n    reste = somme - paye;\n    while (reste >= 10) {\n        i10++;\n        reste -= 10;\n    }\n    if (reste >= 5) {\n        i5++;\n        reste -= 5;\n    }\n    document.getElementById('resolve').innerHTML = \"Vous devez :\" + somme + \" € </br>Rendu de la monnaie :</br>Billets de 10 E : \" + i10+ \"</br>Billets de  5 E : \" + i5+\"</br>Pièces de 1 E : \" + reste\n}\n",
+  "scriptConsigne": "Entrez le prix du 1er article",
+  "scriptJs": "sommePrice",
+  "scriptJquery": "sommePrice",
+  "scriptPhp": "5/10.php"
+}
+

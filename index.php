@@ -1,4 +1,6 @@
 <?php
+session_name('algo');
+session_start();
 function dirToArray($dir) {
 
     $result = array();
@@ -22,6 +24,7 @@ function dirToArray($dir) {
 }
 $navContent = dirToArray('work');
 ksort($navContent);
+include 'script/script.php';
 ?>
 <!doctype html>
 <html lang="fr">
@@ -29,9 +32,9 @@ ksort($navContent);
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/prism.css">
     <link rel="stylesheet" href="css/style.css">
     <title>Test Algorithmes</title>
 </head>
@@ -78,7 +81,7 @@ ksort($navContent);
                     <h4 class="">Consigne : </h4>
                     <p class="col-12 font-weight-light consigne ml-2"><?= $exo['consigne'] ?></p>
                     <h4 class="">Pseudo-Code : </h4>
-                    <p class="col-12 font-weight-light consigne ml-2"><?php echo ($exo['pseudoCode']) ?></p>
+                    <pre class="col-12 font-weight-light consigne ml-2"><code class="language-markup"><?= ($exo['pseudoCode']) ?></code></pre>
                 </div>
                 <div class="col-lg-6 second">
                     <?php if (isset($exo['js'])) : ?>
@@ -92,25 +95,27 @@ ksort($navContent);
                                 <a class="nav-item nav-link" href="#php" data-toggle="tab">Php</a>
                             <?php endif; ?>
                         </nav>
-                        <div class="tab-content mb-2 ml-5">
-                            <div class="tab-pane fade show active font-weight-light consigne" id="js"><?= $exo['js'] ?></div>
-                            <div class="tab-pane fade font-weight-light consigne" id="jquery"><?= $exo['jquery'] ?></div>
-                            <div class="tab-pane fade font-weight-light consigne" id="php"><?= $exo['php'] ?></div>
+                        <div class="tab-content mb-2">
+                            <div class="tab-pane fade show active font-weight-light" id="js"><pre><code class="language-javascript"><?= $exo['js'] ?></code></pre></div>
+                            <div class="tab-pane fade font-weight-light" id="jquery"><pre><code class="language-javascript"><?= $exo['jquery'] ?></code></pre></div>
+                            <div class="tab-pane fade font-weight-light" id="php"><pre><code class="language-php"><?= $exo['php'] ?></code></pre></div>
                         </div>
                     <?php endif; ?>
                     <?php if (isset($exo['scriptJs'])) : ?>
                         <h4 class="">Execution script</h4>
-                        <div class="row text-center mt-3 ml-3">
-                                <button class="col-4 text-white border-0 btn btn-secondary" id="javascriptForm" type="button">JavaScript</button>
+                        <div class="row text-center align-content-center mt-3 ml-3">
+                                <button class="col-3 text-white border-0 btn btn-secondary btnExec" id="javascriptForm" type="button">JavaScript</button>
                             <?php if (isset($exo['scriptJquery'])) : ?>
-                                <button class="col-4 text-white border-0 btn btn-secondary ml-2" type="button" id="jqueryForm">Jquery</button>
+                                <button class="col-3 text-white border-0 btn btn-secondary btnExec" type="button" id="jqueryForm">Jquery</button>
                             <?php endif; if (isset($exo['scriptPhp'])) : ?>
-                                <button class="col-4 text-white border-0 btn btn-secondary ml-2" type="button" onclick="creatForm('Php', '<?= $exo['scriptPhp'] ?>')">Php</button>
+                                <button class="col-3 text-white border-0 btn btn-secondary btnExec" type="button" id="phpForm">Php</button>
+                            <?php endif; if (!empty($_SESSION)) : ?>
+                                <button class="col-3 text-white border-0 btn btn-secondary btnExec" type="button" id="destroy">Destroy $_SESSION</button>
                             <?php endif; ?>
                         </div>
                     <?php endif; ?>
-                    <form class="ml-5 mt-3 consigne" hidden></form>
-                    <div id="myPrompt"></div>
+                    <div class="consigne" <?php if (empty($_GET['r'])) : ?> hidden<?php endif; ?>>Le résultat est <?= $_GET['r'] ?></div>
+                    <form class="ml-5 mt-3 consigne" id="formExec" hidden></form>
                 </div>
             </div>
             <?php endif; ?>
@@ -121,6 +126,7 @@ ksort($navContent);
 <script src="js/jquery.js"></script>
 <script src="js/popper.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script src="js/prism.js"></script>
 <script src="script/script.js"></script>
 <script>
     $("#javascriptForm").click(function () {
@@ -128,6 +134,7 @@ ksort($navContent);
         var inputTitle = <?= json_encode($exo['inputTitle']) ?>;
         $("form").attr('id', 'resultJs');
         result = $("#resultJs");
+        result.html("");
         result.removeAttr('hidden');
         result.append("<h5 id='consigne'>"+consigne+"</h5>")
         $.each(inputTitle,function (index, val) {
@@ -147,6 +154,7 @@ ksort($navContent);
         var inputTitle = <?= json_encode($exo['inputTitle']) ?>;
         $("form").attr('id', 'resultJs');
         result = $("#resultJs");
+        result.html("");
         result.removeAttr('hidden');
         result.append("<h5 id='consigne'>"+consigne+"</h5>")
         $.each(inputTitle,function (index, val) {
@@ -161,18 +169,43 @@ ksort($navContent);
             <?= $exo['scriptJs'] ?>(input);
         });
     })
-
-
-
-    function creatForm(lang, scriptName) {
-        result = $("#result");
+    $("#phpForm").click(function () {
+        var consigne = "<?= $exo['scriptConsigne'] ?>";
+        var inputTitle = <?= json_encode($exo['inputTitle']) ?>;
+        $("form").attr('id', 'resultPhp');
+        $("form").attr('method', 'POST');
+        $("form").attr('action', 'script/<?= $exo['scriptPhp'] ?>')
+        result = $("#resultPhp");
+        result.html("");
         result.removeAttr('hidden');
-        result.html("                    <h5>Script "+lang+" Renseignez la(les) valeurs d'entrée</h5>\n" +
-            "                    <p><?= $exo['scriptConsigne'] ?></p>\n" +
-            "                        <input class=\"input-group col-6 bg-transparent border-dark rounded mr-3 pl-2 text-black\" placeholder='Après avoir rempli appuyer sur entrée' id=\"inputForm\" onchange='"+scriptName+"(this.value)' type=\"text\">\n" +
-            "                    <div class='col-6' id='resolve'></div>\n");
-    }
-
+        result.append("<h5 id='consigne'>"+consigne+"</h5>")
+        $.each(inputTitle,function (index, val) {
+            result.append("<p>"+val+"</p><input name='"+index+"'>");
+        })
+        result.append('</br><input class="btn-primary btn mt-3"  type="submit" value="Run !">');
+        result.append('<div id="resolve"></div>')
+    })
+    $("#destroy").click(function () {
+        $(location).attr("href", "script/reset.php");
+    })
 </script>
+<?php if (!empty($_SESSION['return'])) : ?>
+    <script>
+        console.log('test');
+        var consigne = "<?= $exo['scriptConsigne'] ?>";
+        var inputTitle = <?= json_encode($exo['inputTitle']) ?>;
+        $("form").attr('id', 'resultPhp');
+        $("form").attr('method', 'POST');
+        $("form").attr('action', 'script/<?= $exo['scriptPhp'] ?>')
+        result = $("#resultPhp");
+        result.removeAttr('hidden');
+        result.append("<h5 id='consigne'>"+consigne+"</h5>")
+        $.each(inputTitle,function (index, val) {
+            result.append("<p>"+val+"</p><input name='"+index+"'>");
+        })
+        result.append('</br><input class="btn-primary btn mt-3"  type="submit" value="Run !">');
+        result.append("<div id='return'><?= $_SESSION['return'] ?></div>");
+    </script>
+<?php endif; ?>
 </body>
 </html>

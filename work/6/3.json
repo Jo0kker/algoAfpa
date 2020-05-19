@@ -1,0 +1,14 @@
+{
+  "consigne": "Ecrire un algorithme qui déclare un tableau de 9 notes, dont on fait ensuite saisir les valeurs par l’utilisateur.",
+  "pseudoCode":"notes = []\nPour nNote = 0; nNote < 8;\n  Ecrire 'Entrez la note ' + i++\n  Lire notes[i]\nFinPour\nEcrire 'Les notes enregistre sont : ' + notes\n",
+  "inputTitle": {
+    "note": "Entrez une note"
+  },
+  "js": "let notes = [];\nlet i = 0\nfunction noteTake(arg) {\n    let note = parseInt(arg[0].value);\n    if (i < 8) {\n        notes.push(note);\n        document.getElementById('resolve').innerHTML = \"Ajoutez la note \" + (i+1);\n        i++;\n    }else {\n        document.getElementById('resolve').innerHTML = \"Les notes sont \"+notes;\n    }\n}\n",
+  "jquery": "let notes = [];\nlet i = 0\nfunction noteTake(arg) {\n    let note = parseInt(arg[0].value);\n    if (i < 8) {\n        notes.push(note);\n        $('#resolve').html('Ajoutez la note ' + (i+1))\n        i++;\n    }else {\n        $('#resolve').html(\"Les notes sont \"+notes);\n    }\n}\n",
+  "php": "if (empty($_SESSION['notes'])) {\n    $_SESSION['notes'] = [];\n    $_SESSION['iteration'] = 0;\n}\n$note = (int)$_POST['note'];\n$_SESSION['notes'][$_SESSION['iteration']] = $note;\nif ($_SESSION['iteration'] >= 8) {\n    $_SESSION['return'] = $_SESSION['notes'];\n}\n",
+  "scriptConsigne": "Entrez 9 notes",
+  "scriptJs": "noteTake",
+  "scriptJquery": "noteTake",
+  "scriptPhp": "6/3.php"
+}

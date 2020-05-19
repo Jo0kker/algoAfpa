@@ -1,0 +1,9 @@
+{
+  "consigne": "Ecrire un algorithme qui déclare et remplisse un tableau de 7 valeurs numériques en les mettant toutes à zéro.\n",
+  "pseudoCode":"A = []\nPour i = 0; i < 6; i++\n    A[i] = 0\nFinPour",
+  "scriptConsigne": "Executer pour crée un tableau de 7 zero",
+  "scriptJs": "arrayZero",
+  "scriptJquery": "arrayZero",
+  "js": "function arrayZero() {\n    var A = [];\n    for (let i = 0; i < 6; i++) {\n        A[i] = 0;\n    }\n    document.getElementById('resolve').innerHTML = A;\n}\n",
+  "jquery": "function arrayZero() {\n    var A = [];\n    for (let i = 0; i < 6; i++) {\n        A[i] = 0;\n    }\n    $('#resolve').html(A);\n}\n"
+}

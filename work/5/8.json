@@ -1,0 +1,13 @@
+{
+  "consigne": "Ecrire un algorithme qui demande successivement 20 nombres à l’utilisateur, et qui lui dise ensuite quel était le plus grand parmi ces 20 nombres",
+  "pseudoCode": "Ecrire <g>'Entrez successivement 20 nombres'</g><br />\n<b>max</b> = <r>0</r><br />\n<b>iteration = 0</b><br />\nTantQue <b>i</b> = <r>1</r>; <b>i</b> <= <r>20</r>; <b>i</b>++<br />\nEcrire <g>'Le '+ i +' nombre'</g><br />\nLire <b>num</b>;<br />\n<t>Si <b>num</b> > <b>max</b></t><br />\n<tt><b>max</b> = <b>num</b></tt><br />\n<t><b>iteration</b> = <b>i</b><br />\n<t>FinSi</t><br />\nFinTantQue<br />\nEcrire <g>'Le max est '</g> + <b>max</b> + <g>' a l'iteration n°'</g> + <b>iteration</b> + <g>' '</g><br />\n",
+  "scriptJs": "multiNumber",
+  "scriptJquery": "multiNumber",
+  "scriptConsigne": "Entrez successivement 20 nombres",
+  "inputTitle": {
+    "num": "Votre nombre"
+  },
+  "jquery": "var multiNumber_max = 0;\nvar multiNumber_iteration = 0;\nfunction multiNumber(arg) {\n    var num = arg[0].value;\n    if (num > multiNumber_max) {\n        multiNumber_max = num;\n    }\n    multiNumber_iteration++;\n    if (multiNumber_iteration === 20) {\n        $('input').remove();\n        $('#resolve').html('Le max est '+multiNumber_max+' a l\\'iteration n°'+multiNumber_iteration);\n    }else {\n        $('input').focus();\n        $('#consigne').html('Entrez le ' + multiNumber_iteration + ' nombre');\n    }\n}\n",
+  "js" : "var multiNumber_max = 0;\nvar multiNumber_iteration = 0;\nfunction multiNumber(arg) {\n    var num = arg[0].value;\n    if (num > multiNumber_max) {\n        multiNumber_max = num;\n    }\n    multiNumber_iteration++;\n    if (multiNumber_iteration === 5) {\n        document.getElementById('resolve').innerHTML = 'Le max est '+multiNumber_max+' a l\\'iteration n°'+multiNumber_iteration;\n    }else {\n        document.getElementById('consigne').innerHTML = 'Entrez le ' + multiNumber_iteration + ' nombre';\n    }\n}\n",
+  "scriptPhp": "5/8.php"
+}

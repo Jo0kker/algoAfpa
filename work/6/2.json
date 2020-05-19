@@ -1,0 +1,7 @@
+{
+  "consigne": "Ecrire un algorithme qui déclare et remplisse un tableau contenant les six voyelles de l’alphabet latin.",
+  "pseudoCode": "A = [\"a\",\"e\",\"i\",\"o\",\"u\",\"y\"]\n",
+  "js": "function arrayVoil() {\n    var fruits = ['a','e','i','o','u','y'];\n}\n",
+  "jquery": "function arrayVoil() {\n    var fruits = ['a','e','i','o','u','y'];\n}\n",
+  "php":"$A[] = [\"a\",\"e\",\"i\",\"o\",\"u\",\"y\"];\n"
+}
