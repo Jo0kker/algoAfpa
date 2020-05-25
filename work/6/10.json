@@ -1,0 +1,7 @@
+{
+  "pseudoCode": "T1 = [4,8,7,9,1,5,4,6]\nT2 = [7,6,5,2,1,3,7,4]\nsomme = []\ni = 0\nPOUR i < 8\n    somme[i] = T1[i] + T2[i];\ni SUIVANT\n",
+  "consigne": "Ecrivez un algorithme constituant un tableau, à partir de deux tableaux de même longueur préalablement saisis. Le nouveau tableau sera la somme des éléments des deux tableaux de départ.",
+  "js": "function sommeArray() {\n    let T1 = [4,8,7,9,1,5,4,6];\n    let T2 = [7,6,5,2,1,3,7,4];\n    let somme;\n    somme = [];\n    for (i = 0; i <= T2.length; i++) {\n        somme[i] = T1[i] + T2[i];\n    }\n}\n",
+  "jquery": "function sommeArray() {\n    let T1 = [4,8,7,9,1,5,4,6];\n    let T2 = [7,6,5,2,1,3,7,4];\n    let somme;\n    somme = [];\n    for (i = 0; i <= T2.length; i++) {\n        somme[i] = T1[i] + T2[i];\n    }\n}\n",
+  "php": "$T1 = [4,8,7,9,1,5,4,6];\n$T2 = [7,6,5,2,1,3,7,4];\n$somme = [];\n\nforeach ($T1 as $index => $value) {\n    $somme[$index] = ($T1[$index] + $T2[$index]);\n}"
+}

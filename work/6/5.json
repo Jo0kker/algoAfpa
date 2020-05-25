@@ -1,0 +1,4 @@
+{
+  "consigne": "Que produit l’algorithme suivant ?\nPeut-on simplifier cet algorithme avec le même résultat ?",
+  "pseudoCode": "Tableau N(6) en Entier\nVariables i, k en Entier\nDEBUT\n    N(0) ← 1\n    Pour k ← 1 à 6\n        N(k) ← N(k-1) + 2\n    k SUIVANT\n    POUR i ← 0 à 6\n        Ecrire N(i)\n    i SUIVANT\nFIN\n\nRESULTAT :\nN = [\"1\",\"3\",\"5\",\"7\",\"9\",\"11\",\"13\"]\n\nCode reduit :\n\nDEBUT\n    N(0) ← 1\n    POUR k ← 1 à 6\n        N(k) ← N(k-1) + 2\n        ECRIRE N(k)\n    k SUIVANT\nFin"
+}

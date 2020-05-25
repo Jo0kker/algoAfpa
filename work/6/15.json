@@ -1,0 +1,14 @@
+{
+  "consigne": "Pour sa naissance, la grand-mère de TITI place une somme de 1000 Euros sur son compte épargne rémunéré\nau taux de 2.75% (chaque année le compte est augmenté de 2.75%). Développer un algorithme permettant\nde stocker dans un tableau sur 20 ans associant à chaque anniversaire de TITI la somme acquise sur son compte.\nPuis, la grand-mère de TITI aura la possibilité de saisir un âge (compris entre 1 et 20 ans) et l'algorithme affichera la somme correspondante qu'il y'aura alors sur le compte.",
+  "pseudoCode": "ECRIRE \"Entrez le nombre d'années avant de retirer :\"\nLire iteration\ncompteMoney = 0;\ni = 0;\nPOUR iteration à (i - 1)\n    compteMoney = 2.75/100 * compteMoney + compteMoney\n    i++\ni SUIVANT\n\nECRIRE \"Au bout de \"+iteration+\" années, il y aura \"+compteMoney+\" sur le compte\";",
+  "inputTitle": {
+    "iteration": "Nombre d'années avant de retirer l'argent",
+    "compteMoney": "Valeur de départ"
+  },
+  "scriptConsigne": "Entrez le nombre d'années et l'argent mis sur le compte épargne",
+  "scriptJs": "economy",
+  "scriptJquery": "economy",
+  "jquery": "function economy(arg) {\n    iteration = parseInt(arg[0].value);\n    let compteMoney = parseInt(arg[1].value);\n    for (i = 0; i < iteration; i++) {\n        compteMoney = 2.75/100 * compteMoney + compteMoney;\n    }\n    $('#resolve').html(\"Au bout de \"+iteration+\" années, il y aura \"+compteMoney+\" sur le compte\");\n}\n",
+  "js": "function economy(arg) {\n    iteration = parseInt(arg[0].value);\n    let compteMoney = parseInt(arg[1].value);\n    for (i = 0; i < iteration; i++) {\n        compteMoney = 2.75/100 * compteMoney + compteMoney;\n    }\n    document.getElementById('resolve').innerText = \"Au bout de \"+iteration+\" années, il y aura \"+compteMoney+\" sur le compte\";\n}\n",
+  "scriptPhp": "6/15.php"
+}

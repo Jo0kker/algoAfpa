@@ -1,0 +1,14 @@
+{
+  "pseudoCode": "tab = [1,32,23,43,12,54,14,56,77];\nPOUR i = 1 à 8\n    x = tab[i]\n    j = i\n    TANTQUE j > 0 ET tab[j-1] < x\n        tab[j] = tab[j-1]\n        j--\n\n    tab[j] = x",
+  "consigne": "Ecrivez un algorithme qui trie un tableau dans l’ordre décroissant. Methode tri par insertion",
+  "scriptJs": "suiteInsert",
+  "scriptJquery": "suiteInsert",
+  "inputTitle": {
+    "num": "Votre nombre a inserer"
+  },
+  "scriptConsigne": "Inserez des nombres a trie par insertion",
+  "jquery": "function suiteInsert(arg) {\n    tab[iterationZero] = parseInt(arg[0].value);\n    for (let j = 0; j < tab.length; j++) {\n        let x = tab[j];\n        for (let k = j;j > 0 && tab[j-1] < x;j--) {\n            tab[j] = tab[j-1];\n        }\n        tab[j] = x;\n    }\n    iterationZero++;\n    $('#resolve').html('Le tableau triée est : '+tab);\n}",
+  "js": "function suiteInsert(arg) {\n    tab[iterationZero] = parseInt(arg[0].value);\n    for (let j = 0; j < tab.length; j++) {\n        let x = tab[j];\n        for (let k = j;j > 0 && tab[j-1] < x;j--) {\n            tab[j] = tab[j-1];\n        }\n        tab[j] = x;\n    }\n    iterationZero++;\n    document.getElementById('resolve').innerText = 'Le tableau triée est : '+tab;\n}",
+  "scriptPhp": "7/2.1.php",
+  "php": "if (!isset($_SESSION['iteration']) || empty($_SESSION['iteration']) ) {\n    $_SESSION['iteration'] = 0;\n    $_SESSION['tab'] = [];\n}\n\n$_SESSION['tab'][$_SESSION['iteration']] = (int)$_POST['num'];\nfor ($j = 0; $j < $_SESSION['iteration']+1; $j++) {\n    $x = $_SESSION['tab'][$j];\n        for ($k = $j;$j > 0 && $_SESSION['tab'][$j-1] < $x;$j--) {\n            $_SESSION['tab'][$j] = $_SESSION['tab'][$j-1];\n    }\n    $_SESSION['tab'][$j] = $x;\n}\n$_SESSION['iteration']++;\n$_SESSION['return'] = \"Le tableau triée est : \" . implode(' ,',$_SESSION['tab']);\nheader(\"Location: ../../../algo/?s=7&e=2.1\");\nexit();\n"
+}

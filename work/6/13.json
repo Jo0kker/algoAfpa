@@ -1,0 +1,12 @@
+{
+  "consigne": "Ecrivez un algorithme permettant, toujours sur le même principe, à l’utilisateur de saisir un nombre déterminé de valeurs. Le programme, une fois la saisie terminée, renvoie la plus grande valeur en précisant quelle position elle occupe dans le tableau. On prendra soin d’effectuer la saisie dans un premier temps, et la recherche de la plus grande valeur du tableau dans un second temps.",
+  "pseudoCode": "ECRIRE \"Entrez le nombre de valeurs :\"\nLire iteration\nmax = 0;\niMax = 0;\nPOUR i = 1 à iteration\n    ECRIRE \"Entrez le nombre n° \", i\n    Lire N\n    SI N > max\n        max = N\n        iMax = i \n    FINSI\n    i++\nFINPOUR\nECRIRE \"MAX : \" + max + \"Iteration Max\" + iMax",
+  "scriptJs": "arrayMaxOne",
+  "scriptJquery": "arrayMaxOne",
+  "scriptConsigne": "Entrez le nombre de valeur a renseigner",
+  "inputTitle": {
+    "num": "Votre nombre"
+  },
+  "js": "let max = 0;\nlet iMax = 0;\nfunction arrayMaxOne(arg) {\n    if (i <= 0) {\n        i = parseInt(arg[0].value);\n        $('#consigne').html('Entrez la valeur '+iteration);\n        $('input[name=num]').val(\"\");\n    }else{\n        N[iteration-1] = parseInt(arg[0].value) + 1;\n        if (max < parseInt(arg[0].value)) {\n            max = parseInt(arg[0].value);\n            iMax = iteration;\n        }\n        iteration++;\n    }\n    if (i === iteration) {\n        $('#consigne').html('La valeur max est : '+ max + ' à la position '+iMax);\n        $('input[name=num]').remove();\n    }else{\n        $('#consigne').html('Rentrez la valeur '+ iteration);\n        $('input[name=num]').val(\"\");\n    }\n}\n",
+  "jquery": "let max = 0;\nlet iMax = 0;\nfunction arrayMaxOne(arg) {\n    if (i <= 0) {\n        i = parseInt(arg[0].value);\n        $('#consigne').html('Entrez la valeur '+iteration);\n        $('input[name=num]').val(\"\");\n    }else{\n        N[iteration-1] = parseInt(arg[0].value) + 1;\n        if (max < parseInt(arg[0].value)) {\n            max = parseInt(arg[0].value);\n            iMax = iteration;\n        }\n        iteration++;\n    }\n    if (i === iteration) {\n        $('#consigne').html('La valeur max est : '+ max + ' à la position '+iMax);\n        $('input[name=num]').remove();\n    }else{\n        $('#consigne').html('Rentrez la valeur '+ iteration);\n        $('input[name=num]').val(\"\");\n    }\n}\n"
+}

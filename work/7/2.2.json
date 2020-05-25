@@ -1,0 +1,13 @@
+{
+  "consigne": "Ecrivez un algorithme qui trie un tableau dans l’ordre décroissant. Methode tri par bulles",
+  "pseudoCode": "tab = [1,32,23,43,12,54,14,56,77];\n\nchanger = true;\n\nTANTQUE changer = true\n    changer = false\n    POUR i = 0 à 8\n        SI tab[i] < tab[i + 1]\n            ECHANGER tab[i] AVEC tab[i+1]\n            changer = true;\n        FINSI\n    i SUIVANT\n",
+  "scriptConsigne": "Entrez un nombre pour l'ajouter au tableau en trie en bulle",
+  "inputTitle": {
+    "num": "Entrez votre nombre"
+  },
+  "scriptJs": "suiteBulle",
+  "scriptJquery": "suiteBulle",
+  "js": "function suiteBulle(arg) {\n    tab[iterationZero] = parseInt(arg[0].value);\n    let changer = true;\n\n    while (changer) {\n        changer = false;\n\n        for (let i = 0; i < tab.length; i++)\n        {\n            if (tab[i] < tab[i + 1])\n            {\n                console.log(tab[i]+\" : \"+tab[i + 1])\n                let temp = tab[i];\n                tab[i] = tab[i + 1];\n                tab[i + 1] = temp;\n                changer = true;\n\n            }\n        }\n    }\n    iterationZero++;\n    $('#resolve').html(\"Le tableau en trie par bulle est : \"+tab);\n}",
+  "jquery": "function suiteBulle(arg) {\n    tab[iterationZero] = parseInt(arg[0].value);\n    let changer = true;\n\n    while (changer) {\n        changer = false;\n\n        for (let i = 0; i < tab.length; i++)\n        {\n            if (tab[i] < tab[i + 1])\n            {\n                console.log(tab[i]+\" : \"+tab[i + 1])\n                let temp = tab[i];\n                tab[i] = tab[i + 1];\n                tab[i + 1] = temp;\n                changer = true;\n\n            }\n        }\n    }\n    iterationZero++;\n    $('#resolve').html(\"Le tableau en trie par bulle est : \"+tab);\n}",
+  "php": ""
+}

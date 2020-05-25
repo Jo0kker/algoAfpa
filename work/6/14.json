@@ -1,0 +1,10 @@
+{
+  "consigne": "Toujours et encore sur le même principe, écrivez un algorithme permettant, à l’utilisateur de saisir les notes d'une classe. Le programme, une fois la saisie terminée, renvoie le nombre de ces notes supérieures à la moyenne de la classe.",
+  "pseudoCode": "ECRIRE \"Entrez le nombre de valeurs :\"\nLire iteration\nnote = [];\nmoy = 0;\nsomme = 0;\nnoteSup = 0;\nPOUR i = 0 à (iteration - 1)\n    ECRIRE \"Entrez la note \", (i+1)\n    Lire note[i]\n    somme = somme + note[i]\n    i++\ni SUIVANT\nmoy = somme ÷ iteration;\nPOUR i = 0 à (iteration - 1)\n    SI note[i] > moy\n        noteSup++;\n    FINSI\ni SUIVANT\nECRIRE \"Moyenne : \" + moy + \" Nombre de note superieures a la moyenne\" + noteSup\n",
+  "inputTitle": {
+    "note": "Entrez un chiffre"
+  },
+  "scriptConsigne": "Entrez le nombre de note a enregistrer",
+  "scriptJs": "noteSupMoy",
+  "js": "function noteSupMoy(arg) {\n    if (iterationZero < 1) {\n        iterationZero = parseInt(arg[0].value);\n        document.getElementById('consigne').innerHTML = 'Merci de rentrer la note : ' + (i+1);\n    }else{\n        if ((i+1) < iterationZero) {\n            console.log(i);\n            note[i] = parseInt(arg[0].value);\n            somme += note[i];\n            console.log(somme);\n            i++;\n            document.getElementById('consigne').innerHTML = 'Merci de rentrer la note : ' + (i+1);\n        }else{\n            note[i] = parseInt(arg[0].value);\n            somme += note[i];\n            moy = somme / iterationZero;\n            note.forEach(element => {\n                if (element > moy) {\n                    noteSup++;\n                }\n            });\n            document.getElementById('consigne').innerHTML = 'La moyenne est de ' + moy + ' et il y a '+noteSup+' au dessus de la moyenne.';\n        }\n    }\n}\n"
+}

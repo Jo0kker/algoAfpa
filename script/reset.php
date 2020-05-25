@@ -2,5 +2,5 @@
 session_name('algo');
 session_start();
 session_destroy();
-header('Location: ../index.php');
+header("location:".  $_SERVER['HTTP_REFERER']);
 exit();

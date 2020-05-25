@@ -1,0 +1,13 @@
+{
+  "consigne": "Ecrivez la fin de l’algorithme 6.3 afin que le calcul de la moyenne des notes soit effectué et affiché à l’écran.",
+  "pseudoCode": "notes = []\nsomme = 0\nPOUR nNote = 0; nNote < 8;\n  ECRIRE 'Entrez la note ' + i++\n  LIRE notes[i]\n  somme = somme + notes[i]\nFINPOUR\nECRIRE 'La moyenne des notes est : ' + (somme ÷ 9)\n",
+  "js": "let notes = [];\nlet i = 0;\nlet somme = 0;\nfunction moyNote(arg) {\n    let note = parseInt(arg[0].value);\n    if (i < 8) {\n        notes.push(note);\n        document.getElementById('resolve').innerHTML = \"Ajoutez la note \" + (i+1);\n        somme = somme + note;\n        i++;\n    }else {\n        document.getElementById('resolve').innerHTML = \"La moyenne des notes est \"+(somme / 8);\n    }\n}\n",
+  "jquery": "let notes = [];\nlet i = 0;\nlet somme = 0;\nfunction moyNote(arg) {\n    let note = parseInt(arg[0].value);\n    if (i < 8) {\n        notes.push(note);\n        $('#resolve').html(\"Ajoutez la note \" + (i+1))\n        somme = somme + note;\n        i++;\n    }else {\n        $('#resolve').html(\"La moyenne des notes est \"+(somme / 8));\n    }\n}\n",
+  "scriptJs": "moyNote",
+  "scriptJquery": "moyNote",
+  "inputTitle": {
+    "note": "Entrez votre note"
+  },
+  "scriptPhp": "6/7.php",
+  "php": "if (!isset($_SESSION['notes'])) {\n    $_SESSION['notes'] = [];\n    $_SESSION['iteration'] = 0;\n    $_SESSION['somme'] = 0;\n}\n$note = $_POST['note'];\nif ($_SESSION['iteration'] < 3) {\n    $_SESSION['notes'][$_SESSION['iteration']] = $note;\n    $_SESSION['iteration']++;\n    $_SESSION['somme'] += $note;\n    $_SESSION['return'] = \"Ajouter la note \" . $_SESSION['iteration'];\n}else{\n    $_SESSION['return'] = \"La moyenne est de \" . ($_SESSION['somme'] / 3);\n}\n"
+}

@@ -16,6 +16,7 @@ function dirToArray($dir) {
             }
             else
             {
+                $value = str_replace(".json","",$value);
                 $result[] = $value;
             }
         }
@@ -58,6 +59,7 @@ include 'script/script.php';
                     </button>
                     <?php if (!empty($navContent[$sais])) : ?>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <?php sort($exos) ?>
                         <?php foreach ($exos as $exo) :?>
                         <a class="dropdown-item" href="?s=<?= $sais . '&e=' . str_replace('.json', '', $exo) ?>"><?= 'Exo ' . str_replace('.json', '', $exo) ?></a>
                         <?php endforeach; ?>
@@ -81,13 +83,28 @@ include 'script/script.php';
                     <h4 class="">Consigne : </h4>
                     <p class="col-12 font-weight-light consigne ml-2"><?= $exo['consigne'] ?></p>
                     <h4 class="">Pseudo-Code : </h4>
-                    <pre class="col-12 font-weight-light consigne ml-2"><code class="language-markup"><?= ($exo['pseudoCode']) ?></code></pre>
+                    <pre class="col-12 font-weight-light consigne ml-2"><code class="language-javascript"><?= ($exo['pseudoCode']) ?></code></pre>
                 </div>
                 <div class="col-lg-6 second">
+                    <?php if (isset($exo['scriptJs'])) : ?>
+                        <h4 class="">Execution script</h4>
+                        <div class="row text-center align-content-center mt-3 ml-3">
+                            <button class="col-3 text-white border-0 btn btn-secondary btnExec" id="javascriptForm" type="button">JavaScript</button>
+                            <?php if (isset($exo['scriptJquery'])) : ?>
+                                <button class="col-3 text-white border-0 btn btn-secondary btnExec" type="button" id="jqueryForm">Jquery</button>
+                            <?php endif; if (isset($exo['scriptPhp'])) : ?>
+                                <button class="col-3 text-white border-0 btn btn-secondary btnExec" type="button" id="phpForm">Php</button>
+                            <?php endif; if (!empty($_SESSION)) : ?>
+                                <button class="col-3 text-white border-0 btn btn-secondary btnExec" type="button" id="destroy">Destroy $_SESSION</button>
+                            <?php endif; ?>
+                        </div>
+                    <?php endif; ?>
+                    <div class="consigne" <?php if (empty($_GET['r'])) : ?> hidden<?php endif; ?>>Le résultat est <?= $_GET['r'] ?></div>
+                    <form class="ml-5 mt-3 consigne" id="formExec" hidden></form>
                     <?php if (isset($exo['js'])) : ?>
                         <h4>CODE :</h4>
                         <nav class="nav nav-tabs mb-2 ml-3">
-                            <?php if (isset($exo['js'])): ?>
+                            <?php if (isset($exo['js'])) : ?>
                                 <a class="nav-item nav-link active" href="#js" data-toggle="tab">JavaScript</a>
                             <?php endif; if (isset($exo['jquery'])): ?>
                                 <a class="nav-item nav-link" href="#jquery" data-toggle="tab">Jquery</a>
@@ -101,21 +118,7 @@ include 'script/script.php';
                             <div class="tab-pane fade font-weight-light" id="php"><pre><code class="language-php"><?= $exo['php'] ?></code></pre></div>
                         </div>
                     <?php endif; ?>
-                    <?php if (isset($exo['scriptJs'])) : ?>
-                        <h4 class="">Execution script</h4>
-                        <div class="row text-center align-content-center mt-3 ml-3">
-                                <button class="col-3 text-white border-0 btn btn-secondary btnExec" id="javascriptForm" type="button">JavaScript</button>
-                            <?php if (isset($exo['scriptJquery'])) : ?>
-                                <button class="col-3 text-white border-0 btn btn-secondary btnExec" type="button" id="jqueryForm">Jquery</button>
-                            <?php endif; if (isset($exo['scriptPhp'])) : ?>
-                                <button class="col-3 text-white border-0 btn btn-secondary btnExec" type="button" id="phpForm">Php</button>
-                            <?php endif; if (!empty($_SESSION)) : ?>
-                                <button class="col-3 text-white border-0 btn btn-secondary btnExec" type="button" id="destroy">Destroy $_SESSION</button>
-                            <?php endif; ?>
-                        </div>
-                    <?php endif; ?>
-                    <div class="consigne" <?php if (empty($_GET['r'])) : ?> hidden<?php endif; ?>>Le résultat est <?= $_GET['r'] ?></div>
-                    <form class="ml-5 mt-3 consigne" id="formExec" hidden></form>
+
                 </div>
             </div>
             <?php endif; ?>

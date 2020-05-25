@@ -1,0 +1,7 @@
+{
+  "pseudoCode": "T1 = [4,8,7,12]\nT2 = [3,6]\ntoon = []\ni = 0\ni2 = 0\nPOUR i < 2\n    POUR i2 < 4\n        toon = (toon + (T2[i2] * T1[i]))\n    i2 SUIVANT\ni SUIVANT\n",
+  "consigne": "Toujours à partir de deux tableaux précédemment saisis, écrivez un algorithme qui calcule le « Toon » des deux tableaux. Pour calculer le « Toon », il faut multiplier chaque élément du tableau 1 par chaque élément du tableau 2, et additionner le tout.",
+  "js": "function toonArray() {\n    let T1 = [4,8,7,9,1,5,4,6];\n    let T2 = [7,6];\n    let toon = 0;\n    for (let i = 0; i <= T2.length; i++) {\n        for (let i2 = 0; i2 <= T1.length; i2++) {\n            toon += (T2[i2] * T1[i]);\n        }\n    }\n}\n",
+  "jquery": "function toonArray() {\n    let T1 = [4,8,7,9,1,5,4,6];\n    let T2 = [7,6];\n    let toon = 0;\n    for (let i = 0; i <= T2.length; i++) {\n        for (let i2 = 0; i2 <= T1.length; i2++) {\n            toon += (T2[i2] * T1[i]);\n        }\n    }\n}\n",
+  "php": "$T1 = [4,8,7,9,1,5,4,6];\n$T2 = [7,6];\n$somme = 0;\n\nforeach ($T2 as $index => $value) {\n    foreach ($T2 as $index2 => $value2) {\n        $somme += ($T1[$index] + $value);\n    }\n}\n"
+}

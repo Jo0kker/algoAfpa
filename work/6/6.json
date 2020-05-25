@@ -1,0 +1,4 @@
+{
+  "consigne": "Que produit l’algorithme suivant ?",
+  "pseudoCode": "Tableau Suite(7) en Entier\nVariable i en Entier\nDEBUT\n    Suite(0) = 1\n    Suite(1) = 1\n    POUR i = 2 à 7\n        Suite(i) = Suite(i-1) + Suite(i-2)\n    i SUIVANT\n    POUR i = 0 à 7\n        ECRIRE Suite(i)\n    i SUIVANT\nFIN\n\nRESULTAT =\nSuite = [\"1\",\"1\",\"2\",\"3\",\"5\",\"8\",\"13\",\"21\"]"
+}

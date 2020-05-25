@@ -1,3 +1,27 @@
+let max = 0;
+let iMax = 0;
+let note = [];
+let moy = 0;
+let noteSup = 0;
+let iterationZero = 0;
+var randomNum = Math.floor(Math.random() * 100) + 1;
+var prix = 0;
+var somme = 0;
+var paye = 0;
+var reste = 0;
+var multiNumber_max = 0;
+var multiNumber_iteration = 1;
+var multiNumber_maxIteration = 0;
+let notes = [];
+let i = 0
+let N = [];
+N[0] = 0;
+let iteration = 1;
+let Npos = 0;
+let tab = [];
+let newTab = [];
+
+
 function carre(num) {
     num = parseInt(num[0].value);
     if (Number.isInteger(num)) {
@@ -224,7 +248,6 @@ function smallBig(arg) {
         $('#resolve').html("<h5 class='mt-2'>Good number</h5>");
     }
 }
-var randomNum = Math.floor(Math.random() * 100) + 1;
 function randomN(arg) {
     var N = arg[0].value;
     if (N < randomNum) {
@@ -266,11 +289,8 @@ function factorNum(arg) {
     }
     $('#resolve').html('La factorielle est : ' + F);
 }
-var multiNumber_max = 0;
-var multiNumber_iteration = 1;
-var multiNumber_maxIteration = 0;
 function multiNumber(arg) {
-    var num = arg[0].value;
+    var num = parseInt(arg[0].value);
     if (num > multiNumber_max) {
         multiNumber_max = num;
         multiNumber_maxIteration = multiNumber_iteration;
@@ -279,10 +299,6 @@ function multiNumber(arg) {
     $('#resolve').html('Le max est '+multiNumber_max+' a l\'iteration n°'+multiNumber_maxIteration);
     $('#consigne').html('Entrez le ' + multiNumber_iteration + ' nombre');
 }
-var prix = 0;
-var somme = 0;
-var paye = 0;
-var reste = 0;
 function sommePrice(arg) {
     var i10 = 0;
     var i5 = 0;
@@ -323,8 +339,6 @@ function arrayZero() {
 function arrayVoil() {
     var fruits = ['a','e','i','o','u','y'];
 }
-let notes = [];
-let i = 0
 function noteTake(arg) {
     let note = parseInt(arg[0].value);
     if (i < 8) {
@@ -334,4 +348,223 @@ function noteTake(arg) {
     }else {
         document.getElementById('resolve').innerHTML = "Les notes sont "+notes;
     }
+}
+function moyNote(arg) {
+    let note = parseInt(arg[0].value);
+    if (i < 8) {
+        notes.push(note);
+        document.getElementById('resolve').innerHTML = "Ajoutez la note " + (i+1);
+        somme = somme + note;
+        i++;
+    }else {
+        document.getElementById('resolve').innerHTML = "La moyenne des notes est "+(somme / 8);
+    }
+}
+function arrayPosNeg(arg) {
+    if (N[0] < 1) {
+        N[0] = parseInt(arg[0].value);
+        $('#consigne').html('Entrez la valeur '+iteration);
+        $('input[name=num]').val("");
+    }else{
+        if (iteration >= N[0]){
+            //on a terminer, on affiche le résultat
+            $('#consigne').html('Il y a '+Npos+' valeur positive et '+Nneg+' valeur négative.');
+            $('input[name=num]').remove();
+        }else{
+            N[iteration] = parseInt(arg[0].value);
+            if (N[iteration] > 0){
+                Npos++;
+            }else {
+                Nneg++;
+            }
+            iteration++;
+            $('#consigne').html('Entrez la valeur '+iteration);
+            $('input[name=num]').val("");
+        }
+    }
+}
+function toonArray() {
+    let T1 = [4,8,7,9,1,5,4,6];
+    let T2 = [7,6];
+    let toon = 0;
+    for (let i = 0; i <= T2.length; i++) {
+        for (let i2 = 0; i2 <= T1.length; i2++) {
+            toon += (T2[i2] * T1[i]);
+        }
+    }
+}
+function arrayAddOne(arg) {
+    if (i <= 0) {
+        i = parseInt(arg[0].value);
+        $('#consigne').html('Entrez la valeur '+iteration);
+        $('input[name=num]').val("");
+    }else{
+        N[iteration-1] = parseInt(arg[0].value) + 1;
+        iteration++;
+    }
+    if (i === iteration) {
+        $('#consigne').html('Tableau valeur + 1 = '+ N);
+        $('input[name=num]').remove();
+    }else{
+        $('#consigne').html('Rentrez la valeur '+ iteration);
+        $('input[name=num]').val("");
+    }
+}
+function arrayMax(arg) {
+    if (i <= 0) {
+        i = parseInt(arg[0].value);
+        $('#consigne').html('Entrez la valeur '+iteration);
+        $('input[name=num]').val("");
+    }else{
+        N[iteration-1] = parseInt(arg[0].value) + 1;
+        iteration++;
+    }
+    if (i === iteration) {
+        $('#consigne').html('Tableau valeur + 1 = '+ N);
+        $('input[name=num]').remove();
+    }else{
+        $('#consigne').html('Rentrez la valeur '+ iteration);
+        $('input[name=num]').val("");
+    }
+}
+function arrayMaxOne(arg) {
+    if (i <= 0) {
+        i = parseInt(arg[0].value);
+        $('#consigne').html('Entrez la valeur '+iteration);
+        $('input[name=num]').val("");
+    }else{
+        N[iteration-1] = parseInt(arg[0].value) + 1;
+        if (max < parseInt(arg[0].value)) {
+            max = parseInt(arg[0].value);
+            iMax = iteration;
+        }
+        iteration++;
+    }
+    if (i === iteration) {
+        $('#consigne').html('La valeur max est : '+ max + ' à la position '+iMax);
+        $('input[name=num]').remove();
+    }else{
+        $('#consigne').html('Rentrez la valeur '+ iteration);
+        $('input[name=num]').val("");
+    }
+}
+function noteSupMoy(arg) {
+    if (iterationZero < 1) {
+        iterationZero = parseInt(arg[0].value);
+        document.getElementById('consigne').innerHTML = 'Merci de rentrer la note : ' + (i+1);
+        $('#consigne').html('Merci de rentrer la note : ' + (i+1));
+        $('input[name=note]').val('');
+    }else{
+        if ((i+1) < iterationZero) {
+            console.log(i);
+            note[i] = parseInt(arg[0].value);
+            somme += note[i];
+            console.log(somme);
+            i++;
+            document.getElementById('consigne').innerHTML = 'Merci de rentrer la note : ' + (i+1);
+        }else{
+            note[i] = parseInt(arg[0].value);
+            somme += note[i];
+            moy = somme / iterationZero;
+            note.forEach(element => {
+                if (element > moy) {
+                    noteSup++;
+                }
+            });
+            document.getElementById('consigne').innerHTML = 'La moyenne est de ' + moy + ' et il y a '+noteSup+' au dessus de la moyenne.';
+        }
+    }
+}
+function economy(arg) {
+    iteration = parseInt(arg[0].value);
+    let compteMoney = parseInt(arg[1].value);
+    for (i = 0; i < iteration; i++) {
+        compteMoney = 2.75/100 * compteMoney + compteMoney;
+    }
+    $('#resolve').html("Au bout de "+iteration+" années, il y aura "+compteMoney+" sur le compte");
+}
+function tabRanger(arg) {
+    tab[iterationZero] = parseInt(arg[0].value);
+    let minTab = tab[0];
+    let maxTab = tab[0];
+    newTab = [];
+    for (let j = 0; j < tab.length; j++) {
+        if (minTab > tab[j]) {
+            minTab = tab[j];
+        }
+        if (maxTab < tab[j]) {
+            maxTab = tab[j];
+        }
+    }
+    let iterationNewTab = 0;
+    let inTab;
+    for (; minTab <= maxTab; minTab++) {
+        inTab = false;
+        tab.forEach((elem) => {
+            if (elem === minTab) {
+                inTab = true;
+            }
+        })
+        if (inTab) {
+            newTab[iterationNewTab] = minTab;
+            iterationNewTab++;
+        }
+    }
+    iterationZero++;
+    $('#consigne').html("Entrez le chiffre "+iterationZero);
+    $('#resolve').html("Le tableau classe est "+newTab);
+}
+function suiteTest(arg) {
+    tab[iterationZero] = parseInt(arg[0].value);
+    let cons = true;
+    if (tab.length > 1) {
+        for (let j = 0; j < tab.length-1; j++) {
+            if ((tab[j]+1) !== tab[j+1]) {
+                cons = false;
+            }
+        }
+        if (cons) {
+            $('#resolve').html("Les entrées sont consecutif : "+tab);
+        }else{
+            $('#resolve').html("Les entrées ne sont pas consecutif : "+tab);
+        }
+    }else{
+        $('#resolve').html("Entrez votre prochain nombre : "+tab);
+    }
+    iterationZero++;
+}
+function suiteInsert(arg) {
+    tab[iterationZero] = parseInt(arg[0].value);
+    for (let j = 0; j < tab.length; j++) {
+        let x = tab[j];
+        for (let k = j;j > 0 && tab[j-1] < x;j--) {
+            tab[j] = tab[j-1];
+        }
+        tab[j] = x;
+    }
+    iterationZero++;
+    $('#resolve').html('Le tableau triée est : '+tab);
+}
+function suiteBulle(arg) {
+    tab[iterationZero] = parseInt(arg[0].value);
+    let changer = true;
+
+    while (changer) {
+        changer = false;
+
+        for (let i = 0; i < tab.length; i++)
+        {
+            if (tab[i] < tab[i + 1])
+            {
+                console.log(tab[i]+" : "+tab[i + 1])
+                let temp = tab[i];
+                tab[i] = tab[i + 1];
+                tab[i + 1] = temp;
+                changer = true;
+
+            }
+        }
+    }
+    iterationZero++;
+    $('#resolve').html("Le tableau en trie par bulle est : "+tab);
 }

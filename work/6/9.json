@@ -1,0 +1,4 @@
+{
+  "consigne": "Ecrivez un algorithme calculant la somme des valeurs d’un tableau (on suppose que le tableau a été préalablement saisi).\n",
+  "pseudoCode": "T = [\"10\",\"12\",\"31\"]\nsomme = 0;\nPOUR i=0; i <= 3\n    somme = somme + T[i]\nFINPOUR\n"
+}

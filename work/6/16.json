@@ -1,0 +1,4 @@
+{
+  "consigne": "Ecrire un algorithme permettant de résoudre le problème suivant : – Données : un tableau tableau contenant 100 entiers\n– Résultat : “vrai” si les entiers sont consécutifs et “faux” sinon",
+  "pseudoCode": "tab = [1...100];\ni = 0\ncons = true\nPOUR i à (99)\n    SI tab[i] != tab[i+1]\n        cons = false\n    FINSI\ni SUIVANT\nSI cons\n    ECRIRE \"Le tableau est consecutif\"\nSINON\n    ECRIRE \"Le tableau n'est pas consecutif\"\nFINSI"
+}

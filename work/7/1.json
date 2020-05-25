@@ -1,0 +1,12 @@
+{
+  "consigne": "Ecrivez un algorithme qui permette de saisir un nombre quelconque de valeurs, et qui les range au fur et à mesure dans un tableau. Le programme, une fois la saisie terminée, doit dire si les éléments du tableau sont tous consécutifs ou non.",
+  "pseudoCode": "tab = [1...100];\ni = 0\ncons = true\nPOUR i à (99)\n    SI tab[i] != tab[i+1]\n        cons = false\n    FINSI\ni SUIVANT\nSI cons\n    ECRIRE \"Le tableau est consecutif\"\nSINON\n    ECRIRE \"Le tableau n'est pas consecutif\"\nFINSI",
+  "scriptConsigne": "Entrez des nombres consecutif ou non",
+  "inputTitle": {
+    "num": "Entrez un nombre"
+  },
+  "scriptJs": "suiteTest",
+  "scriptJquery": "suiteTest",
+  "jquery": "function suiteTest(arg) {\n    tab[iterationZero] = parseInt(arg[0].value);\n    let cons = true;\n    if (tab.length > 1) {\n        for (let j = 0; j < tab.length-1; j++) {\n            if ((tab[j]+1) !== tab[j+1]) {\n                cons = false;\n            }\n        }\n        if (cons) {\n            $('#resolve').html(\"Les entrées sont consecutif : \"+tab);\n        }else{\n            $('#resolve').html(\"Les entrées ne sont pas consecutif : \"+tab);\n        }\n    }else{\n        $('#resolve').html(\"Entrez votre prochain nombre : \"+tab);\n    }\n    iterationZero++;\n}",
+  "js": "function suiteTest(arg) {\n    tab[iterationZero] = parseInt(arg[0].value);\n    let cons = true;\n    if (tab.length > 1) {\n        for (let j = 0; j < tab.length-1; j++) {\n            if ((tab[j]+1) !== tab[j+1]) {\n                cons = false;\n            }\n        }\n        if (cons) {\n            document.getElementById('resolve').innerHTML = \"Les entrées sont consecutif : \"+tab\n        }else{\n            document.getElementById('resolve').innerHTML = \"Les entrées ne sont pas consecutif : \"+tab\n        }\n    }else{\n        document.getElementById('resolve').innerHTML = \"Entrez votre prochain nombre : \"+ta\n    }\n    iterationZero++;\n}"
+}

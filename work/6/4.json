@@ -1,0 +1,4 @@
+{
+  "consigne": "Que produit l’algorithme suivant ?",
+  "pseudoCode": "Tableau Nb(5) en Entier\nVariable i en Entier\nPour i ← 0 à 5\n    Nb(i) ← i * i\ni suivant\nPour i ← 0 à 5\n    Ecrire Nb(i)\ni suivant\n\nRésultat :\nNb = [\"0\",\"1\",\"4\",\"9\",\"16\",\"25\"]\n\nCode réduit :\n\nPour i ← 0 à 5\n    Nb(i) ← i * i\n    Ecrire Nb(i)\ni suivant\n"
+}
