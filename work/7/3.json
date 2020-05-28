@@ -1,0 +1,9 @@
+{
+  "consigne": "Ecrivez un algorithme qui inverse l’ordre des éléments d’un tableau dont on suppose qu'il a été préalablement saisi (« les premiers seront les derniers... »)",
+  "pseudoCode": "tab = [2,43,25,23,52,76]\nmaxTab = tab.length - 1;\nPOUR i = 0; maxTab >= 0; maxTab--\n  Temp = tab(i)\n  tab(i) = tab(maxTab)\n  tab(maxTab) = Temp\ni SUIVANT",
+  "scriptJs": "arrayReverse",
+  "jquery": "    let tab2 = [2,43,25,23,52,76];\n    let maxTab = tab2.length - 1;\n    for (let j = 0; maxTab >= tab2.length/2; maxTab--) {\n        let Temp = tab2[j]\n        tab2[j] = tab2[maxTab]\n        tab2[maxTab] = Temp\n        j++;\n        console.log(tab2)\n    }\n    $('#resolve').html(\"Le tableau inverse est : \" + tab2);\n}",
+  "js": "function arrayReverse() {\n    let tab2 = [2,43,25,23,52,76];\n    let maxTab = tab2.length - 1;\n    for (let j = 0; maxTab >= tab2.length/2; maxTab--) {\n        let Temp = tab2[j]\n        tab2[j] = tab2[maxTab]\n        tab2[maxTab] = Temp\n        j++;\n        console.log(tab2)\n    }\n    document.getElementById('resolve').innerText = \"Le tableau inverse est : \" + tab2;\n}",
+  "scriptJquery": "arrayReverse",
+  "scriptConsigne": "Le tableau [2,43,25,23,52,76] va etre inverse"
+}

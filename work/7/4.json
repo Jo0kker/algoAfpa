@@ -1,0 +1,8 @@
+{
+  "consigne": "Ecrivez un algorithme qui permette à l’utilisateur de supprimer une valeur d’un tableau préalablement saisi. L’utilisateur donnera l’indice de la valeur qu’il souhaite supprimer.",
+  "scriptConsigne": "Entrée un index de ce tableau pour en suprimer la valeur [2,43,25,23,52,76]",
+  "inputTitle": {
+    "num": "Index a supprimer"
+  },
+  "scriptJs": "arraySupIndex"
+}

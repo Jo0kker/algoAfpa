@@ -568,3 +568,24 @@ function suiteBulle(arg) {
     iterationZero++;
     $('#resolve').html("Le tableau en trie par bulle est : "+tab);
 }
+function arrayReverse() {
+    let tab2 = [2,43,25,23,52,76];
+    let maxTab = tab2.length - 1;
+    for (let j = 0; maxTab >= tab2.length/2; maxTab--) {
+        let Temp = tab2[j]
+        tab2[j] = tab2[maxTab]
+        tab2[maxTab] = Temp
+        j++;
+        console.log(tab2)
+    }
+    $('#resolve').html("Le tableau inverse est : " + tab2);
+}
+function arraySupIndex(arg) {
+    tab = [2,43,25,23,52,76]
+    let indexSup = parseInt(arg[0].value);
+    for (i = indexSup;i <= tab.length - 2;i++) {
+        tab[i] = tab[i + 1];
+    }
+    delete tab[i];
+    $('#resolve').html("Le nouveau tableau est : "+tab);
+}
