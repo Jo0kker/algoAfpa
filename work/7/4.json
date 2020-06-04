@@ -4,5 +4,9 @@
   "inputTitle": {
     "num": "Index a supprimer"
   },
-  "scriptJs": "arraySupIndex"
+  "scriptJs": "arraySupIndex",
+  "js": "function arraySupIndex(arg) {\n    tab = [2,43,25,23,52,76]\n    let indexSup = parseInt(arg[0].value);\n    for (i = indexSup;i <= tab.length - 2;i++) {\n        tab[i] = tab[i + 1];\n    }\n    delete tab[i];\n    $('#resolve').html(\"Le nouveau tableau est : \"+tab);\n}",
+  "jquery": "function arraySupIndex(arg) {\n    tab = [2,43,25,23,52,76]\n    let indexSup = parseInt(arg[0].value);\n    for (i = indexSup;i <= tab.length - 2;i++) {\n        tab[i] = tab[i + 1];\n    }\n    delete tab[i];\n    $('#resolve').html(\"Le nouveau tableau est : \"+tab);\n}",
+  "pseudoCode": "tab = [2,43,25,23,52,76]\nECRIRE \"Ecrivez l'index de la valeur a supprimer\"\nLire indexSup\nPOUR i = indexSub à indexSup.lenght - 2\n    tab[i] = tab[i+1]\ni SUIVANT",
+  "scriptJquery": "arraySubIndex"
 }

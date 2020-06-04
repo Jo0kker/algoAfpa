@@ -1,0 +1,4 @@
+{
+  "consigne": "Ecrivez l'algorithme qui recherche un mot saisi au clavier dans un dictionnaire. Le dictionnaire est supposé être codé dans un tableau préalablement rempli et trié.",
+  "pseudoCode": "Sinon\n    Inf ← Comp + 1\n  FinSi\n  Fini ← Mot = Dico(Comp) ou Sup < Inf\nFinTantQue\nSi Mot = Dico(Comp) Alors\n  Ecrire \"le mot existe\"\nSinon\n  Ecrire \"Il n'existe pas\"\nFinsi\nFin"
+}
