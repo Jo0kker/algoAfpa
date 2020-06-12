@@ -589,3 +589,76 @@ function arraySupIndex(arg) {
     delete tab[i];
     $('#resolve').html("Le nouveau tableau est : "+tab);
 }
+function searchArray(arg) {
+    let dico = [];
+    let mot = arg;
+    let mots = dico.length;
+    i = 0;
+    for (let end = false; !end ;) {
+
+    }
+
+}
+function scrabble(arg) {
+    let request = new XMLHttpRequest();
+    request.open("GET", "asset/wFr.json", false);
+    request.send(null)
+    let dicoJson = JSON.parse(request.responseText);
+
+    let dico = [];
+    for(var i in dicoJson) {
+        if(dicoJson.hasOwnProperty(i) && !isNaN(+i)) {
+            dico[+i] = dicoJson[i];
+        }
+    }
+
+    let soluce = [];
+    let lettres = arg[0].value.split(",");
+    //il faut que j'ai toute les lettre du mot
+    // scanner si il me manque une lettre au début
+    dico.forEach((mot) => {
+        let isPresent = true; //si il manque une lettre du mot
+        let nLetterPresent = 0; //nombre de lettre presente dans le mot
+        lettres.forEach((lettre) => {
+            let countMot = 0; //compteur d'une meme lettre dans le mot
+            let countLettre = 0; //compteur de lettre identique dans les lettres propose
+
+            //if pour dire si le mot a toute mes lettres
+            if (mot.search(lettre) >= 0 && isPresent) { // je verifie que le mot contient au moins une lettre de la proposition
+                let AMot = mot.split("");
+                //je compte combien de fois j'ai la lettre dans le mot
+                AMot.forEach((lettreDuMot) => {
+                    if (lettreDuMot === lettre) {
+                        countMot++;
+                    }
+                    if ($.inArray(lettreDuMot, lettres) < 0) {
+                        isPresent = false;
+                    }
+                })
+                //je compte combien de fois j'ai la lettre dans la liste de lettre
+                lettres.forEach((lettreDeLettres)=>{
+                    if (lettreDeLettres === lettre){
+                        countLettre++;
+                    }
+                })
+                //je verifie que les nombre des lettre sont identique
+                if (countMot > countLettre) {
+                    isPresent = false;
+                }else{
+                    nLetterPresent++;
+                }
+            }else {
+                isPresent = false //si il manque une lettre dans le mot faut passer au prochain mot
+            }
+        })
+        //test pour savoir si j'ai toute les lettres du mot
+
+
+        // console.log(isPresent)
+        if (nLetterPresent > 2 && isPresent) {
+            soluce.push(mot);
+        }
+    })
+    $('#resolve').html("Les mots possible sont : "+soluce);
+
+}

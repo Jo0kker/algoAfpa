@@ -1,4 +1,9 @@
 {
   "consigne": "Ecrivez l'algorithme qui recherche un mot saisi au clavier dans un dictionnaire. Le dictionnaire est supposé être codé dans un tableau préalablement rempli et trié.",
-  "pseudoCode": "Sinon\n    Inf ← Comp + 1\n  FinSi\n  Fini ← Mot = Dico(Comp) ou Sup < Inf\nFinTantQue\nSi Mot = Dico(Comp) Alors\n  Ecrire \"le mot existe\"\nSinon\n  Ecrire \"Il n'existe pas\"\nFinsi\nFin"
+  "pseudoCode": "Ecrire \"Entrez le mot à vérifier\"\nLire mot\nmots = dico.lenth\ni = 0\nend = false\nTANTQUE !end\n    Comp = (mots + i)/2\n    SI mot < dico(Comp)\n        mots = Comp - 1\n    SINON\n        i = Comp + 1\n      FINSI\n      end = mot = dico(Comp) ou mots < i\nFINTANTQUE\nSI mot = dico(Comp)\n  ECRIRE \"le mot existe\"\nSINON\n  ECRIRE \"Il n'existe pas\"\nFINSI\n",
+  "inputTitle": {
+    "lettres" : "Entrez vos lettres séparer d'une virgule"
+  },
+  "scriptJs": "scrabble",
+  "scriptConsigne": "Sorry le script n'est pas exactement ce que demande la consigne. C'est un outil de triche pour scrabble, vous entrez vos lettres et il vous trouve des mots possible"
 }
