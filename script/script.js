@@ -651,9 +651,13 @@ function scrabble(arg) {
                 isPresent = false //si il manque une lettre dans le mot faut passer au prochain mot
             }
         })
-        if (nLetterPresent > 2 && isPresent) {
+        if (nLetterPresent > 2) {
             soluce.push(mot);
         }
     })
-    $('#resolve').html("Les mots possible sont : "+soluce);
+    $('#resolve').html("Les mots possible sont : ");
+    soluce.forEach((solu)=>{
+        $('#resolve').append(solu+"<br/>");
+    })
+
 }
