@@ -651,14 +651,9 @@ function scrabble(arg) {
                 isPresent = false //si il manque une lettre dans le mot faut passer au prochain mot
             }
         })
-        //test pour savoir si j'ai toute les lettres du mot
-
-
-        // console.log(isPresent)
         if (nLetterPresent > 2 && isPresent) {
             soluce.push(mot);
         }
     })
     $('#resolve').html("Les mots possible sont : "+soluce);
-
 }
