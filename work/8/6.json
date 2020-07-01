@@ -1,0 +1,9 @@
+{
+  "consigne": "Soit un tableau T à deux dimensions (12, 8) préalablement rempli de valeurs numériques. Écrire un algorithme qui recherche la plus grande valeur au sein de ce tableau.",
+  "pseudoCode": "max = T[0][0]\nPOUR i = T.length\n  POUR j = T[i].length\n    SI max < T[i][j]\n        max = T[i][j]\n    FINSI\n  j SUIVANT\ni SUIVANT",
+  "scriptJs": "arrayMaxArray",
+  "scriptJquery": "arrayMaxArray",
+  "scriptConsigne": "Le script crée un tableau de 12 par 8, et génere aléatoirement des nombres pour vous donne la valeur max du tableau",
+  "js": "function arrayMaxArray() {\n    let T = [[],[],[],[],[],[],[],[],[],[],[],[]]\n    T.forEach((item, index) => {\n        for (let j = 0; j < 7; j++) {\n            T[index][j] = Math.round(Math.random() * 10000);\n        }\n    })\n    console.log(T);\n    let max = T[0][0];\n    for (let j = 0; j < T.length; j++) {\n        for (let k = 0; k < T[j].length; k++) {\n            if (max < T[j][k]) {\n                max = T[j][k]\n            }\n        }\n    }\n    $('#resolve').html(\"La valeur max du tableau est : <br/>\"+max+\"<br/>Le tableau de base est : <br/>\");\n    T.forEach((solu)=>{\n        $('#resolve').append(solu+\"<br/>\");\n    })\n}",
+  "jquery": "function arrayMaxArray() {\n    let T = [[],[],[],[],[],[],[],[],[],[],[],[]]\n    T.forEach((item, index) => {\n        for (let j = 0; j < 7; j++) {\n            T[index][j] = Math.round(Math.random() * 10000);\n        }\n    })\n    console.log(T);\n    let max = T[0][0];\n    for (let j = 0; j < T.length; j++) {\n        for (let k = 0; k < T[j].length; k++) {\n            if (max < T[j][k]) {\n                max = T[j][k]\n            }\n        }\n    }\n    $('#resolve').html(\"La valeur max du tableau est : <br/>\"+max+\"<br/>Le tableau de base est : <br/>\");\n    T.forEach((solu)=>{\n        $('#resolve').append(solu+\"<br/>\");\n    })\n}"
+}

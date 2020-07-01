@@ -1,0 +1,9 @@
+{
+  "consigne": "Écrivez un algorithme remplissant un tableau de 6 sur 13, avec des zéros.",
+  "pseudoCode": "POUR i = 0 à 5\n  POUR j = 0 à 12\n    tab(i, j) = 0\n  j SUIVANT\ni SUIVANT",
+  "scriptJs": "arrayTab",
+  "js": "function arrayTab() {\n    let tab = [];\n    for (let j = 0; j < 5; j++) {\n        tab[j] = [];\n        for (let k = 0; k < 12; k++) {\n            tab[j][k] = 0;\n        }\n    }\n    $('#resolve').html(\"Le tableau est : <br/>\");\n    tab.forEach((tab)=>{\n        $('#resolve').append(tab+\"<br/>\");\n    })\n}",
+  "scriptConsigne": "Appui sur Run pour voir le tableau de 6 sur 13",
+  "scriptJquery": "arrayTab",
+  "jquery": "function arrayTab() {\n    let tab = [];\n    for (let j = 0; j < 5; j++) {\n        tab[j] = [];\n        for (let k = 0; k < 12; k++) {\n            tab[j][k] = 0;\n        }\n    }\n    $('#resolve').html(\"Le tableau est : <br/>\");\n    tab.forEach((tab)=>{\n        $('#resolve').append(tab+\"<br/>\");\n    })\n}"
+}

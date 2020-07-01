@@ -661,3 +661,37 @@ function scrabble(arg) {
     })
 
 }
+function arrayTab() {
+    let tab = [];
+    for (let j = 0; j < 5; j++) {
+        tab[j] = [];
+        for (let k = 0; k < 12; k++) {
+            tab[j][k] = 0;
+        }
+    }
+    $('#resolve').html("Le tableau est : <br/>");
+    tab.forEach((tab)=>{
+        $('#resolve').append(tab+"<br/>");
+    })
+}
+function arrayMaxArray() {
+    let T = [[],[],[],[],[],[],[],[],[],[],[],[]]
+    T.forEach((item, index) => {
+        for (let j = 0; j < 7; j++) {
+            T[index][j] = Math.round(Math.random() * 10000);
+        }
+    })
+    console.log(T);
+    let max = T[0][0];
+    for (let j = 0; j < T.length; j++) {
+        for (let k = 0; k < T[j].length; k++) {
+            if (max < T[j][k]) {
+                max = T[j][k]
+            }
+        }
+    }
+    $('#resolve').html("La valeur max du tableau est : <br/>"+max+"<br/>Le tableau de base est : <br/>");
+    T.forEach((solu)=>{
+        $('#resolve').append(solu+"<br/>");
+    })
+}

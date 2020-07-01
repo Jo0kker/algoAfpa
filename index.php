@@ -37,6 +37,8 @@ include 'script/script.php';
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/prism.css">
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/9c079d7562.js" crossorigin="anonymous"></script>
+    <script src="js/three.js"></script>
     <title>Test Algorithmes</title>
 </head>
 <body class="bg-dark">
@@ -118,7 +120,6 @@ include 'script/script.php';
                             <div class="tab-pane fade font-weight-light" id="php"><pre><code class="language-php"><?= $exo['php'] ?></code></pre></div>
                         </div>
                     <?php endif; ?>
-
                 </div>
             </div>
             <?php endif; ?>
@@ -143,7 +144,7 @@ include 'script/script.php';
         $.each(inputTitle,function (index, val) {
             result.append("<p>"+val+"</p><input name='"+index+"'>");
         })
-        result.append('</br><input class="btn-primary btn mt-3"  type="submit" value="Run !">');
+        result.append('</br><button class="btn-primary btn mt-3" id="submitBTN" type="submit">Run !</button>');
         result.append('<div id="resolve"></div>')
 
         $('#resultJs').submit(function( event ) {
